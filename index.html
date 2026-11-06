@@ -2046,6 +2046,31 @@
     function initItineraryTabs() {
       const tabs = document.querySelectorAll(".day-tab");
       const container = document.getElementById("timelineContainer");
+      const nonSightseeingCategories = new Set(["航班", "交通", "住宿"]);
+
+      function isDisneyItineraryItem(dayNum, item) {
+        const text = [item.title, item.desc, item.transport, item.category]
+          .filter(Boolean)
+          .join(" ");
+        return Number(dayNum) === 3 || text.includes("迪士尼");
+      }
+
+      function getMapQuery(item) {
+        if (item.mapQuery) return item.mapQuery.trim();
+        const title = item.title || "";
+        const roughQuery = title.split("➔")[0].split("＆")[0].split("／")[0].split("/")[0];
+        return roughQuery.replace(/（.*?）|\(.*?\)/g, "").trim();
+      }
+
+      function getMapUrl(dayNum, item) {
+        if (isDisneyItineraryItem(dayNum, item)) return "";
+        if (nonSightseeingCategories.has(item.category)) return "";
+        const hasGoogleMapLink = item.links && item.links.some(link => /google\.[^/]+\/maps/i.test(link.url));
+        if (hasGoogleMapLink) return "";
+        const query = getMapQuery(item);
+        if (!query) return "";
+        return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+      }
 
       function renderDay(dayNum) {
         const data = itineraryData[dayNum];
@@ -2078,6 +2103,16 @@
                 `).join("")}
                </div>`
             : "";
+          const mapUrl = getMapUrl(dayNum, item);
+          const mapLinkHtml = mapUrl
+            ? `<div class="mt-1.5">
+                <a href="${mapUrl}" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1 text-xs sm:text-sm font-black underline decoration-2 underline-offset-2 hover:text-coral transition">
+                  <span>📍 開啟 Google 地圖</span>
+                  <span>↗</span>
+                </a>
+               </div>`
+            : "";
 
           // 根據類型選擇節點圓圈背景色
           let dotBg = "bg-yamabuki";
@@ -2103,6 +2138,7 @@
                 </div>
 
                 <h4 class="text-lg sm:text-xl font-black mb-1.5">${item.title}</h4>
+                ${mapLinkHtml}
                 <p class="text-sm sm:text-base font-bold opacity-90 leading-relaxed">${item.desc}</p>
                 ${bulletsHtml}
                 ${linksHtml}
