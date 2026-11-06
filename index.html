@@ -1,0 +1,2410 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 香港蛋塔巡禮＆迪士尼奇幻之旅｜4天3夜繪本風行程表</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts & OpenHuninn 粉圓體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jf-openhuninn-2.0@2.0.1/webfont/jf-openhuninn-2.0.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            washi: '#FFFCF6',
+            ink: '#3E3A39',
+            coral: '#F2A497',
+            yamabuki: '#F6D27A',
+            mizu: '#A8D3E6',
+            wakatake: '#B9DAA5',
+            cream: '#FFF7E8'
+          },
+          fontFamily: {
+            huninn: ['"jf-openhuninn-2.0"', '"Huninn"', '"Zen Maru Gothic"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --header-offset: 96px;
+    }
+    html {
+      scroll-padding-top: var(--header-offset);
+    }
+    section[id],
+    #hero,
+    #flights-hotels,
+    #itinerary,
+    #disney,
+    #foodie,
+    #checklist,
+    #disney-attractions-filter {
+      scroll-margin-top: var(--header-offset);
+    }
+
+    /* 全局字型與繪本基礎設定（嚴禁漸層，純平塗） */
+    body {
+      background-color: #FFFCF6;
+      color: #3E3A39;
+      font-family: "jf-openhuninn-2.0", "Huninn", "Zen Maru Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      background-image: radial-gradient(#3E3A39 0.65px, transparent 0.65px);
+      background-size: 24px 24px;
+      background-position: 0 0;
+    }
+    /* 移除點狀背景的漸層感，改用純色和紙質感輔助 */
+    .bg-washi-solid {
+      background-color: #FFFCF6;
+    }
+
+    /* 繪本風 3px 墨灰粗線框與硬陰影 */
+    .ehon-card {
+      background-color: #FFFFFF;
+      border: 3px solid #3E3A39;
+      border-radius: 22px;
+      box-shadow: 5px 5px 0px #3E3A39;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    }
+    .ehon-card-hover:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px #3E3A39;
+    }
+    .ehon-box-sm {
+      border: 3px solid #3E3A39;
+      border-radius: 16px;
+      box-shadow: 3px 3px 0px #3E3A39;
+    }
+    .ehon-btn {
+      border: 3px solid #3E3A39;
+      border-radius: 18px;
+      box-shadow: 4px 4px 0px #3E3A39;
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease, background-color 0.15s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .ehon-btn:hover {
+      transform: translate(-1px, -2px);
+      box-shadow: 5px 6px 0px #3E3A39;
+    }
+    .ehon-btn:active {
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0px #3E3A39;
+    }
+    .ehon-badge {
+      border: 2.5px solid #3E3A39;
+      border-radius: 9999px;
+      box-shadow: 2px 2px 0px #3E3A39;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 700;
+    }
+
+    /* SVG 統一粗線條 */
+    .svg-stroke {
+      stroke: #3E3A39;
+      stroke-width: 3px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* 繪本風插圖自然微幅動畫（使用 transform-box: fill-box 防止 SVG 座標跑位浮空） */
+    @keyframes boatRockInSea {
+      0%, 100% { transform: rotate(-1.8deg) translateY(0px); }
+      50% { transform: rotate(1.8deg) translateY(2px); }
+    }
+    @keyframes waveSlide {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(-8px); }
+    }
+    @keyframes cloudDrift {
+      0%, 100% { transform: translateX(0px) translateY(0px); }
+      50% { transform: translateX(5px) translateY(-3px); }
+    }
+    @keyframes wheelSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+    @keyframes steamRise {
+      0%, 100% { transform: translateY(0px); opacity: 0.45; }
+      50% { transform: translateY(-4px); opacity: 1; }
+    }
+    @keyframes tartPulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.03) rotate(1deg); }
+    }
+    @keyframes springBounceIn {
+      0% {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-6px) scale(1.01);
+      }
+      80% {
+        transform: translateY(3px) scale(0.995);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .anim-boat {
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      animation: boatRockInSea 3.8s ease-in-out infinite;
+    }
+    .anim-wave {
+      transform-box: fill-box;
+      transform-origin: center center;
+      animation: waveSlide 4.2s ease-in-out infinite;
+    }
+    .anim-float {
+      transform-box: fill-box;
+      transform-origin: center center;
+      animation: cloudDrift 4.5s ease-in-out infinite;
+    }
+    .anim-float-delay {
+      transform-box: fill-box;
+      transform-origin: center center;
+      animation: cloudDrift 5.2s ease-in-out 1.2s infinite;
+    }
+    .anim-wiggle {
+      transform-box: fill-box;
+      transform-origin: center center;
+      animation: wiggle 2.8s ease-in-out infinite;
+    }
+    .anim-wheel {
+      transform-box: fill-box;
+      transform-origin: center center;
+      animation: wheelSpin 28s linear infinite;
+    }
+    .anim-steam {
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      animation: steamRise 2.4s ease-in-out infinite;
+    }
+    .anim-tart {
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      animation: tartPulse 3.2s ease-in-out infinite;
+    }
+    .spring-enter {
+      animation: springBounceIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    /* 迪士尼地圖園區互動樣式：外層固定座標與感應區，內層原地平穩放大，徹底解決 hover 亂跳問題 */
+    .map-zone {
+      cursor: pointer;
+      outline: none;
+    }
+    .map-zone-hit {
+      fill: transparent;
+      pointer-events: all;
+    }
+    .map-zone-inner {
+      transform-box: fill-box;
+      transform-origin: center center;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+      will-change: transform;
+    }
+    .map-zone:hover .map-zone-inner,
+    .map-zone:focus-visible .map-zone-inner {
+      transform: scale(1.055);
+      filter: drop-shadow(4px 5px 0px #3E3A39);
+    }
+    .map-zone:active .map-zone-inner {
+      transform: scale(0.98);
+    }
+    /* 開啟減少動態效果時，不進行縮放，改以底色與粗框高亮提示 */
+    body.reduce-motion .map-zone:hover .map-zone-inner,
+    body.reduce-motion .map-zone:focus-visible .map-zone-inner {
+      transform: none !important;
+      filter: none !important;
+    }
+    body.reduce-motion .map-zone:hover .map-card-bg {
+      stroke-width: 5px;
+      fill: #FFF7E8;
+    }
+
+    /* 系統減少動態效果 與 手動切換開關支援 */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    body.reduce-motion *,
+    body.reduce-motion ::before,
+    body.reduce-motion ::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* 時間軸裝飾線 */
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      bottom: 16px;
+      left: 23px;
+      width: 4px;
+      background-color: #3E3A39;
+      border-radius: 4px;
+    }
+    @media (min-width: 768px) {
+      .timeline-line::before {
+        left: 31px;
+      }
+    }
+
+    /* 自訂捲軸 */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFFCF6;
+      border-left: 3px solid #3E3A39;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #F6D27A;
+      border: 2px solid #3E3A39;
+      border-radius: 99px;
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-yamabuki selection:text-ink">
+
+  <!-- ================= 1. 頂端固定導覽選單 (Sticky Navbar) ================= -->
+  <header class="sticky top-0 z-50 bg-washi border-b-[3px] border-ink px-3 py-2.5 md:px-6">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-2.5 group focus:outline-none">
+        <div class="w-10 h-10 bg-yamabuki ehon-box-sm flex items-center justify-center anim-wiggle">
+          <!-- 迷你蛋塔 SVG -->
+          <svg viewBox="0 0 40 40" class="w-7 h-7">
+            <path d="M6 22 C6 30, 34 30, 34 22 L37 16 C37 14, 3 14, 3 16 Z" fill="#F2A497" class="svg-stroke"/>
+            <ellipse cx="20" cy="16" rx="16" ry="6" fill="#F6D27A" class="svg-stroke"/>
+            <ellipse cx="16" cy="15" rx="3" ry="1.5" fill="#3E3A39"/>
+            <ellipse cx="25" cy="17" rx="2.5" ry="1.2" fill="#3E3A39"/>
+          </svg>
+        </div>
+        <div>
+          <span class="text-lg md:text-xl font-black tracking-tight block leading-none">HK 2026 繪本旅記</span>
+          <span class="text-xs font-bold bg-mizu px-2 py-0.5 rounded-full border-2 border-ink inline-block mt-0.5">11/07 - 11/10</span>
+        </div>
+      </a>
+
+      <!-- 導覽連結 (Desktop) -->
+      <nav aria-label="主要導覽" class="hidden lg:flex items-center gap-2">
+        <a href="#hero" class="px-3 py-1.5 rounded-xl font-bold hover:bg-yamabuki border-2 border-transparent hover:border-ink transition">首頁倒數</a>
+        <a href="#flights-hotels" class="px-3 py-1.5 rounded-xl font-bold hover:bg-mizu border-2 border-transparent hover:border-ink transition">航班＆住宿</a>
+        <a href="#itinerary" class="px-3 py-1.5 rounded-xl font-bold hover:bg-coral border-2 border-transparent hover:border-ink transition">每日行程</a>
+        <a href="#disney" class="px-3 py-1.5 rounded-xl font-bold hover:bg-yamabuki border-2 border-transparent hover:border-ink transition">迪士尼全攻略</a>
+        <a href="#foodie" class="px-3 py-1.5 rounded-xl font-bold hover:bg-wakatake border-2 border-transparent hover:border-ink transition">美食＆蛋塔</a>
+        <a href="#checklist" class="px-3 py-1.5 rounded-xl font-bold hover:bg-mizu border-2 border-transparent hover:border-ink transition">行前待辦</a>
+      </nav>
+
+      <!-- 右側工具：減少動態效果開關 & 手機版選單按鈕 -->
+      <div class="flex items-center gap-2">
+        <button id="motionToggleBtn" type="button" aria-pressed="false"
+          class="ehon-btn bg-cream px-3 py-1.5 text-xs md:text-sm font-bold flex items-center gap-1.5"
+          title="切換動態效果（支援無障礙減少動態）">
+          <span id="motionIcon" class=" inline-block w-3 h-3 rounded-full bg-wakatake border-2 border-ink"></span>
+          <span id="motionText">動態：開啟</span>
+        </button>
+
+        <button id="mobileMenuBtn" type="button" class="lg:hidden ehon-btn bg-yamabuki p-2" aria-label="展開選單">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6H20M4 12H20M4 18H20" class="svg-stroke"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 手機版折疊導覽列 -->
+    <nav id="mobileMenu" class="hidden lg:hidden mt-3 pt-3 border-t-[3px] border-ink grid grid-cols-2 sm:grid-cols-3 gap-2">
+      <a href="#hero" class="mobile-nav-link ehon-box-sm bg-white px-3 py-2 text-center font-bold text-sm hover:bg-yamabuki">⏳ 首頁倒數</a>
+      <a href="#flights-hotels" class="mobile-nav-link ehon-box-sm bg-white px-3 py-2 text-center font-bold text-sm hover:bg-mizu">✈️ 航班與住宿</a>
+      <a href="#itinerary" class="mobile-nav-link ehon-box-sm bg-white px-3 py-2 text-center font-bold text-sm hover:bg-coral">🗓️ 每日行程</a>
+      <a href="#disney" class="mobile-nav-link ehon-box-sm bg-white px-3 py-2 text-center font-bold text-sm hover:bg-yamabuki">🏰 迪士尼攻略</a>
+      <a href="#foodie" class="mobile-nav-link ehon-box-sm bg-white px-3 py-2 text-center font-bold text-sm hover:bg-wakatake">🥧 美食＆蛋塔</a>
+      <a href="#checklist" class="mobile-nav-link ehon-box-sm bg-white px-3 py-2 text-center font-bold text-sm hover:bg-mizu">✅ 行前待辦</a>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 md:py-10 space-y-14">
+
+    <!-- ================= 2. 首頁英雄區 (Hero Section) ＋ 出發倒數 ================= -->
+    <section id="hero" class="ehon-card bg-cream p-5 sm:p-8 md:p-10 relative overflow-hidden scroll-mt-28">
+      <!-- 頂部裝飾標籤 -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-6">
+        <div class="ehon-badge bg-coral px-4 py-1 text-sm md:text-base">
+          <span>✨ HONG KONG TRIP 2026</span>
+        </div>
+        <div class="ehon-badge bg-wakatake px-4 py-1 text-sm md:text-base">
+          <span>📅 2026/11/07 (六) — 11/10 (二) ・ 4天3夜</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- 左欄：標題與出發倒數計時器 -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="space-y-3">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight">
+              2026 香港<span class="inline-block bg-yamabuki px-3 py-0.5 rounded-2xl border-[3px] border-ink mx-1 transform -rotate-1">蛋塔巡禮</span><br>
+              ＆迪士尼奇幻之旅
+            </h1>
+            <p class="text-base sm:text-lg font-bold leading-relaxed opacity-90">
+              維多利亞港天星小輪、6 大名店蛋塔大評比、太平山百萬日落夜景，還有整整一天的香港迪士尼奇妙夢想城堡與煙火秀！
+            </p>
+          </div>
+
+          <!-- 即時倒數計時器卡片 -->
+          <div class="ehon-card bg-white p-4 sm:p-5">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-black text-sm sm:text-base flex items-center gap-1.5">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="13" r="8" fill="#F6D27A" class="svg-stroke"/>
+                  <path d="M12 9V13L15 15M9 3H15" class="svg-stroke"/>
+                </svg>
+                距離 11/07 13:55 起飛倒數
+              </span>
+              <span id="countdownStatusBadge" class="ehon-badge bg-mizu text-xs px-2.5 py-0.5">準備出發！</span>
+            </div>
+
+            <div id="countdownGrid" class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
+              <div class="ehon-box-sm bg-yamabuki p-2.5 sm:p-3">
+                <div id="cd-days" class="text-2xl sm:text-3xl md:text-4xl font-black leading-none">00</div>
+                <div class="text-xs sm:text-sm font-bold mt-1">天 (Days)</div>
+              </div>
+              <div class="ehon-box-sm bg-coral p-2.5 sm:p-3">
+                <div id="cd-hours" class="text-2xl sm:text-3xl md:text-4xl font-black leading-none">00</div>
+                <div class="text-xs sm:text-sm font-bold mt-1">時 (Hrs)</div>
+              </div>
+              <div class="ehon-box-sm bg-mizu p-2.5 sm:p-3">
+                <div id="cd-mins" class="text-2xl sm:text-3xl md:text-4xl font-black leading-none">00</div>
+                <div class="text-xs sm:text-sm font-bold mt-1">分 (Mins)</div>
+              </div>
+              <div class="ehon-box-sm bg-wakatake p-2.5 sm:p-3">
+                <div id="cd-secs" class="text-2xl sm:text-3xl md:text-4xl font-black leading-none">00</div>
+                <div class="text-xs sm:text-sm font-bold mt-1">秒 (Secs)</div>
+              </div>
+            </div>
+            <p id="countdownMessage" class="hidden mt-3 text-center font-black text-lg bg-yamabuki py-2 rounded-xl border-2 border-ink">
+              🎉 旅途愉快！正在享受香港蛋塔與迪士尼奇幻之旅！
+            </p>
+          </div>
+
+          <!-- 快速跳轉按鈕群 -->
+          <div class="flex flex-wrap gap-3">
+            <a href="#itinerary" class="ehon-btn bg-coral px-5 py-2.5 font-black text-base flex items-center gap-2">
+              <span>📖 查看 4 天行程時間軸</span>
+            </a>
+            <a href="#disney" class="ehon-btn bg-yamabuki px-5 py-2.5 font-black text-base flex items-center gap-2">
+              <span>🏰 迪士尼攻略＆時刻表</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 右欄：原創手繪感大型 SVG 繪本主視覺插圖 -->
+        <div class="lg:col-span-6">
+          <div class="ehon-card bg-washi p-3 sm:p-4">
+            <svg viewBox="0 0 520 380" class="w-full h-auto rounded-xl" role="img" aria-label="香港旅遊繪本插圖：天星小輪在維多利亞港海面上航行、中環摩天輪、迪士尼城堡與盤子上的熱騰騰港式蛋塔">
+              <!-- 天空純色底 -->
+              <rect x="0" y="0" width="520" height="380" rx="14" fill="#FFFCF6"/>
+              
+              <!-- 太陽與雲朵 (保留內部 group 動畫，不與座標 translate 衝突) -->
+              <g class="anim-float">
+                <circle cx="75" cy="65" r="28" fill="#F6D27A" class="svg-stroke"/>
+                <path d="M135 55 C135 42, 155 42, 160 52 C170 42, 190 48, 188 62 C198 64, 198 78, 185 80 L135 80 C122 80, 122 60, 135 55 Z" fill="#FFFFFF" class="svg-stroke"/>
+              </g>
+              <g class="anim-float-delay">
+                <path d="M395 48 C395 36, 415 36, 420 46 C430 38, 448 44, 446 56 C456 58, 456 72, 442 74 L395 74 C384 74, 384 54, 395 48 Z" fill="#FFFFFF" class="svg-stroke"/>
+                <!-- 星星點綴 -->
+                <path d="M340 40 L344 50 L354 54 L344 58 L340 68 L336 58 L326 54 L336 50 Z" fill="#F6D27A" class="svg-stroke"/>
+                <path d="M250 32 L253 39 L260 42 L253 45 L250 52 L247 45 L240 42 L247 39 Z" fill="#F2A497" class="svg-stroke"/>
+              </g>
+
+              <!-- 遠景：太平山山巒 (若竹綠平塗) -->
+              <path d="M0 245 Q110 150 230 225 T460 195 L520 220 L520 290 L0 290 Z" fill="#B9DAA5" class="svg-stroke"/>
+
+              <!-- 山頂纜車小插圖 (山坡上) -->
+              <g transform="translate(48, 182) rotate(-18)">
+                <rect x="0" y="0" width="54" height="26" rx="6" fill="#F2A497" class="svg-stroke"/>
+                <rect x="7" y="5" width="12" height="10" rx="2" fill="#FFFCF6" class="svg-stroke"/>
+                <rect x="22" y="5" width="12" height="10" rx="2" fill="#FFFCF6" class="svg-stroke"/>
+                <rect x="37" y="5" width="10" height="10" rx="2" fill="#FFFCF6" class="svg-stroke"/>
+                <circle cx="14" cy="28" r="4" fill="#3E3A39"/>
+                <circle cx="40" cy="28" r="4" fill="#3E3A39"/>
+              </g>
+
+              <!-- 中景左：中環摩天輪 -->
+              <g>
+                <!-- 支架 -->
+                <path d="M100 265 L130 125 L160 265" fill="none" class="svg-stroke"/>
+                <!-- 旋轉輪盤 -->
+                <g class="anim-wheel">
+                  <circle cx="130" cy="125" r="46" fill="none" class="svg-stroke"/>
+                  <circle cx="130" cy="125" r="8" fill="#F6D27A" class="svg-stroke"/>
+                  <line x1="130" y1="79" x2="130" y2="171" class="svg-stroke"/>
+                  <line x1="84" y1="125" x2="176" y2="125" class="svg-stroke"/>
+                  <line x1="97" y1="92" x2="163" y2="158" class="svg-stroke"/>
+                  <line x1="163" y1="92" x2="97" y2="158" class="svg-stroke"/>
+                  <!-- 車廂 -->
+                  <circle cx="130" cy="79" r="6" fill="#F2A497" class="svg-stroke"/>
+                  <circle cx="130" cy="171" r="6" fill="#F2A497" class="svg-stroke"/>
+                  <circle cx="84" cy="125" r="6" fill="#A8D3E6" class="svg-stroke"/>
+                  <circle cx="176" cy="125" r="6" fill="#A8D3E6" class="svg-stroke"/>
+                </g>
+              </g>
+
+              <!-- 中景右：香港迪士尼奇妙夢想城堡 -->
+              <g transform="translate(275, 85)">
+                <rect x="55" y="65" width="60" height="110" fill="#FFFCF6" class="svg-stroke"/>
+                <polygon points="50,65 85,12 120,65" fill="#F2A497" class="svg-stroke"/>
+                <line x1="85" y1="12" x2="85" y2="-4" class="svg-stroke"/>
+                <polygon points="85,-4 105,3 85,10" fill="#F6D27A" class="svg-stroke"/>
+                <rect x="20" y="95" width="35" height="80" fill="#F6D27A" class="svg-stroke"/>
+                <polygon points="16,95 37.5,52 59,95" fill="#A8D3E6" class="svg-stroke"/>
+                <rect x="115" y="95" width="35" height="80" fill="#F6D27A" class="svg-stroke"/>
+                <polygon points="111,95 132.5,52 154,95" fill="#A8D3E6" class="svg-stroke"/>
+                <path d="M72 175 L72 138 A13 13 0 0 1 98 138 L98 175 Z" fill="#A8D3E6" class="svg-stroke"/>
+                <circle cx="85" cy="95" r="10" fill="#F6D27A" class="svg-stroke"/>
+              </g>
+
+              <!-- 維多利亞港後層海浪 (背景海水) -->
+              <path d="M0 258 Q45 246 90 258 T180 258 T270 258 T360 258 T450 258 T520 258 L520 380 L0 380 Z" fill="#A8D3E6" class="svg-stroke"/>
+
+              <!-- 主角：天星小輪 Star Ferry (外層負責定位在海面，內層負責隨波微晃，絕不浮上天空！) -->
+              <g transform="translate(118, 206)">
+                <g class="anim-boat">
+                  <!-- 船身下層 (若竹綠，浸在海浪裡) -->
+                  <path d="M15 70 L185 70 L168 104 L32 104 Z" fill="#B9DAA5" class="svg-stroke"/>
+                  <!-- 船身上層 (和紙白) -->
+                  <rect x="32" y="38" width="136" height="32" rx="6" fill="#FFFFFF" class="svg-stroke"/>
+                  <!-- 頂棚與煙囪 (山吹黃 + 墨灰) -->
+                  <path d="M24 38 L176 38 L166 26 L34 26 Z" fill="#F6D27A" class="svg-stroke"/>
+                  <rect x="88" y="6" width="24" height="20" fill="#F6D27A" class="svg-stroke"/>
+                  <rect x="88" y="6" width="24" height="7" fill="#3E3A39"/>
+                  <!-- 船窗 -->
+                  <rect x="46" y="46" width="18" height="14" rx="3" fill="#A8D3E6" class="svg-stroke"/>
+                  <rect x="72" y="46" width="18" height="14" rx="3" fill="#A8D3E6" class="svg-stroke"/>
+                  <rect x="110" y="46" width="18" height="14" rx="3" fill="#A8D3E6" class="svg-stroke"/>
+                  <rect x="136" y="46" width="18" height="14" rx="3" fill="#A8D3E6" class="svg-stroke"/>
+                  <!-- 救生圈 -->
+                  <circle cx="65" cy="83" r="7" fill="#F2A497" class="svg-stroke"/>
+                  <circle cx="135" cy="83" r="7" fill="#F2A497" class="svg-stroke"/>
+                </g>
+              </g>
+
+              <!-- 維多利亞港前層海浪 (蓋住天星小輪船底，讓船真正浸在海裡隨波搖擺！) -->
+              <g class="anim-wave">
+                <path d="M-20 302 Q25 289 70 302 T160 302 T250 302 T340 302 T430 302 T540 302 L540 380 L-20 380 Z" fill="#A8D3E6" class="svg-stroke"/>
+                <path d="M20 332 Q60 320 100 332 T180 332 T260 332 T340 332" fill="none" class="svg-stroke"/>
+                <path d="M55 356 Q95 346 135 356 T215 356 T295 356" fill="none" class="svg-stroke"/>
+              </g>
+
+              <!-- 右下角：穩穩放在茶餐廳瓷盤上的港式蛋塔 (外層固定位置，內層只有蛋塔微微Q彈與熱氣上升) -->
+              <g transform="translate(382, 246)">
+                <!-- 徽章底框 -->
+                <circle cx="60" cy="60" r="54" fill="#FFFCF6" class="svg-stroke"/>
+                <!-- 穩固的餐盤 -->
+                <ellipse cx="60" cy="76" rx="44" ry="11" fill="#B9DAA5" class="svg-stroke"/>
+                <!-- 坐在盤子裡的蛋塔 -->
+                <g class="anim-tart">
+                  <path d="M25 60 C27 80, 93 80, 95 60 L100 47 L20 47 Z" fill="#F2A497" class="svg-stroke"/>
+                  <ellipse cx="60" cy="47" rx="40" ry="14" fill="#F6D27A" class="svg-stroke"/>
+                  <ellipse cx="48" cy="45" rx="7" ry="3.5" fill="#3E3A39"/>
+                  <ellipse cx="73" cy="49" rx="6" ry="3" fill="#3E3A39"/>
+                </g>
+                <!-- 冉冉上升的熱氣 -->
+                <g class="anim-steam">
+                  <path d="M46 26 Q42 18 48 12" fill="none" class="svg-stroke"/>
+                  <path d="M74 26 Q70 18 76 12" fill="none" class="svg-stroke"/>
+                </g>
+                <text x="60" y="102" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">EGG TART!</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. 航班資訊卡片 ＆ 住宿資訊卡片 ================= -->
+    <section id="flights-hotels" class="space-y-6 scroll-mt-20">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-mizu ehon-box-sm flex items-center justify-center">
+          <svg class="w-7 h-7" viewBox="0 0 28 28" fill="none">
+            <path d="M3 16L24 4L19 24L13 18L3 16Z" fill="#FFFFFF" class="svg-stroke"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black">航班資訊 ＆ 住宿安排</h2>
+          <p class="text-sm sm:text-base font-bold opacity-80">桃園 (TPE) ⇄ 香港 (HKG) 雙向航班與 3 晚精選飯店</p>
+        </div>
+      </div>
+
+      <!-- 航班雙向對照卡片 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- 去程航班 -->
+        <div class="ehon-card ehon-card-hover p-5 sm:p-6 bg-white relative">
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="ehon-badge bg-mizu px-3.5 py-1 text-sm">✈️ 去程航班｜Day 1</span>
+            <span class="font-black text-sm bg-cream px-3 py-1 rounded-full border-2 border-ink">2026/11/07 (六)</span>
+          </div>
+          <div class="flex items-center justify-between gap-2 my-4 bg-washi p-4 rounded-2xl border-[3px] border-ink">
+            <div class="text-center">
+              <div class="text-2xl sm:text-3xl font-black">13:55</div>
+              <div class="text-sm font-black bg-yamabuki px-2 py-0.5 rounded-lg border-2 border-ink inline-block mt-1">TPE 桃園 T1</div>
+            </div>
+            <div class="flex-1 flex flex-col items-center px-2">
+              <span class="text-xs font-bold mb-1">飛行約 2h 05m</span>
+              <div class="w-full flex items-center">
+                <div class="h-[3px] bg-ink flex-1"></div>
+                <svg class="w-6 h-6 mx-1 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" class="svg-stroke"/>
+                </svg>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl sm:text-3xl font-black">16:00</div>
+              <div class="text-sm font-black bg-coral px-2 py-0.5 rounded-lg border-2 border-ink inline-block mt-1">HKG 香港 T1</div>
+            </div>
+          </div>
+          <p class="text-sm font-bold flex items-center gap-2 bg-cream px-3.5 py-2 rounded-xl border-2 border-ink">
+            <span>💡</span>
+            <span>備註：預估香港入境約 <strong>1 小時</strong>，投票傾向搭<strong>機場快線</strong>（亦可選巴士 A21）進市區。</span>
+          </p>
+        </div>
+
+        <!-- 回程航班 -->
+        <div class="ehon-card ehon-card-hover p-5 sm:p-6 bg-white relative">
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="ehon-badge bg-coral px-3.5 py-1 text-sm">✈️ 回程航班｜Day 4</span>
+            <span class="font-black text-sm bg-cream px-3 py-1 rounded-full border-2 border-ink">2026/11/10 (二)</span>
+          </div>
+          <div class="flex items-center justify-between gap-2 my-4 bg-washi p-4 rounded-2xl border-[3px] border-ink">
+            <div class="text-center">
+              <div class="text-2xl sm:text-3xl font-black">18:40</div>
+              <div class="text-sm font-black bg-coral px-2 py-0.5 rounded-lg border-2 border-ink inline-block mt-1">HKG 香港 T2</div>
+            </div>
+            <div class="flex-1 flex flex-col items-center px-2">
+              <span class="text-xs font-bold mb-1">16:40 抵達機場</span>
+              <div class="w-full flex items-center">
+                <div class="h-[3px] bg-ink flex-1"></div>
+                <svg class="w-6 h-6 mx-1 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" class="svg-stroke"/>
+                </svg>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl sm:text-3xl font-black">20:25</div>
+              <div class="text-sm font-black bg-yamabuki px-2 py-0.5 rounded-lg border-2 border-ink inline-block mt-1">TPE 桃園 T1</div>
+            </div>
+          </div>
+          <p class="text-sm font-bold flex items-center gap-2 bg-cream px-3.5 py-2 rounded-xl border-2 border-ink">
+            <span>😭</span>
+            <span>備註：16:40 抵機場先去 <strong>T1 抵港層 (L5) 接機大堂 A</strong> 領直送行李，<strong>回家啦啦（隔天上班嗚嗚 QQ）</strong>！</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- 住宿資訊卡片 (兩間飯店) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- 飯店 1：城景國際 -->
+        <div class="ehon-card ehon-card-hover p-5 sm:p-6 bg-white flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="ehon-badge bg-yamabuki px-3.5 py-1 text-sm">🏨 Day 1 住宿 (11/7 週六晚)</span>
+              <span class="text-xs font-black bg-washi px-2.5 py-1 rounded-lg border-2 border-ink">油麻地 / 文明里</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black">城景國際 (The Cityview)</h3>
+            <ul class="space-y-2 text-sm sm:text-base font-bold">
+              <li class="flex items-start gap-2">
+                <span class="inline-block bg-mizu px-2 py-0.5 rounded-md border-2 border-ink text-xs flex-shrink-0 mt-0.5">交通</span>
+                <span>投票首選搭<strong>機場快線至香港站轉紅線（荃灣線）至「油麻地站」</strong>；或搭機場巴士 A21 至「文明里」步行 3 分鐘。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="inline-block bg-wakatake px-2 py-0.5 rounded-md border-2 border-ink text-xs flex-shrink-0 mt-0.5">行李攻略</span>
+                <span>11/8 (日) <strong>最晚 12:00 退房</strong>，將行李寄放在城景國際櫃台，輕裝去中環吃蛋塔＆上太平山，晚上從旺角晃回來拿行李再轉往迪士尼！</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 飯店 2：迪士尼好萊塢酒店 -->
+        <div class="ehon-card ehon-card-hover p-5 sm:p-6 bg-white flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="ehon-badge bg-coral px-3.5 py-1 text-sm">🏰 Day 2 & 3 住宿 (11/8 日、11/9 一)</span>
+              <span class="text-xs font-black bg-washi px-2.5 py-1 rounded-lg border-2 border-ink">大嶼山香港迪士尼</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black">迪士尼好萊塢酒店 (Disney's Hollywood Hotel)</h3>
+            <ul class="space-y-2 text-sm sm:text-base font-bold">
+              <li class="flex items-start gap-2">
+                <span class="inline-block bg-mizu px-2 py-0.5 rounded-md border-2 border-ink text-xs flex-shrink-0 mt-0.5">交通</span>
+                <span>搭乘港鐵至「香港迪士尼站」，出站轉乘<strong>飯店免費穿梭巴士</strong>直達入住。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="inline-block bg-yamabuki px-2 py-0.5 rounded-md border-2 border-ink text-xs flex-shrink-0 mt-0.5">必玩體驗</span>
+                <span>三間迪士尼飯店住客皆可體驗<strong>「迪士尼手工藝創作」</strong>（Check-in 時先向櫃檯確認時刻表），以及 11/10 10:00–11:00 <strong>「自助腳踏高卡車體驗」</strong>！</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="inline-block bg-wakatake px-2 py-0.5 rounded-md border-2 border-ink text-xs flex-shrink-0 mt-0.5">退房直送</span>
+                <span>11/10 最晚 11:00 退房（13:30 前交寄行李直送機場，最晚 16:00 送達<strong>香港機場 T1 抵港層 L5 接機大堂 A「行李寄存及送遞服務櫃檯」</strong>）！</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. 每日行程時間軸 (Interactive Tabs + Timeline) ================= -->
+    <section id="itinerary" class="space-y-6 scroll-mt-20">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 bg-coral ehon-box-sm flex items-center justify-center">
+            <svg class="w-7 h-7" viewBox="0 0 28 28" fill="none">
+              <rect x="4" y="6" width="20" height="18" rx="4" fill="#FFFFFF" class="svg-stroke"/>
+              <path d="M4 11H24M9 4V8M19 4V8" class="svg-stroke"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-black">每日行程時間軸</h2>
+            <p class="text-sm sm:text-base font-bold opacity-80">點選上方日期切換，重點行程標有「必去」與交通小標籤</p>
+          </div>
+        </div>
+
+        <!-- 圖例說明 -->
+        <div class="flex flex-wrap items-center gap-2 text-xs font-bold">
+          <span class="ehon-badge bg-coral px-2.5 py-0.5">★ 必去重點</span>
+          <span class="ehon-badge bg-mizu px-2.5 py-0.5">🚇 交通方式</span>
+          <span class="ehon-badge bg-yamabuki px-2.5 py-0.5">🥧 美食/蛋塔</span>
+        </div>
+      </div>
+
+      <!-- 日期切換 Tabs -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3" role="tablist" aria-label="每日行程切換">
+        <button type="button" role="tab" aria-selected="true" data-day="1"
+          class="day-tab ehon-btn bg-yamabuki p-3.5 text-left flex flex-col justify-between">
+          <div class="flex items-center justify-between w-full">
+            <span class="text-xs font-black px-2 py-0.5 rounded-full bg-white border-2 border-ink">DAY 1</span>
+            <span class="text-sm font-black">11/07 (六)</span>
+          </div>
+          <div class="font-black text-base sm:text-lg mt-2">抵達香港＆維港夜景</div>
+        </button>
+
+        <button type="button" role="tab" aria-selected="false" data-day="2"
+          class="day-tab ehon-btn bg-white p-3.5 text-left flex flex-col justify-between">
+          <div class="flex items-center justify-between w-full">
+            <span class="text-xs font-black px-2 py-0.5 rounded-full bg-washi border-2 border-ink">DAY 2</span>
+            <span class="text-sm font-black">11/08 (日)</span>
+          </div>
+          <div class="font-black text-base sm:text-lg mt-2">蛋塔巡禮＆太平山夜景</div>
+        </button>
+
+        <button type="button" role="tab" aria-selected="false" data-day="3"
+          class="day-tab ehon-btn bg-white p-3.5 text-left flex flex-col justify-between">
+          <div class="flex items-center justify-between w-full">
+            <span class="text-xs font-black px-2 py-0.5 rounded-full bg-washi border-2 border-ink">DAY 3</span>
+            <span class="text-sm font-black">11/09 (一)</span>
+          </div>
+          <div class="font-black text-base sm:text-lg mt-2">香港迪士尼全日攻略</div>
+        </button>
+
+        <button type="button" role="tab" aria-selected="false" data-day="4"
+          class="day-tab ehon-btn bg-white p-3.5 text-left flex flex-col justify-between">
+          <div class="flex items-center justify-between w-full">
+            <span class="text-xs font-black px-2 py-0.5 rounded-full bg-washi border-2 border-ink">DAY 4</span>
+            <span class="text-sm font-black">11/10 (二)</span>
+          </div>
+          <div class="font-black text-base sm:text-lg mt-2">飯店體驗＆甘牌燒鵝</div>
+        </button>
+      </div>
+
+      <!-- 時間軸內容容器 -->
+      <div id="timelineContainer" class="ehon-card bg-cream p-4 sm:p-6 md:p-8">
+        <!-- 由 JavaScript 動態渲染並觸發彈跳動畫 -->
+      </div>
+    </section>
+
+    <!-- ================= 5. 香港迪士尼樂園專屬攻略專區 ================= -->
+    <section id="disney" class="space-y-8 scroll-mt-20">
+      <!-- 標題區 + 城堡小插圖 -->
+      <div class="ehon-card bg-yamabuki p-5 sm:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 bg-white ehon-box-sm flex items-center justify-center flex-shrink-0 anim-wiggle">
+            <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none">
+              <rect x="14" y="22" width="20" height="20" fill="#FFFCF6" class="svg-stroke"/>
+              <polygon points="12,22 24,6 36,22" fill="#F2A497" class="svg-stroke"/>
+              <rect x="6" y="28" width="8" height="14" fill="#A8D3E6" class="svg-stroke"/>
+              <polygon points="4,28 10,18 16,28" fill="#F6D27A" class="svg-stroke"/>
+              <rect x="34" y="28" width="8" height="14" fill="#A8D3E6" class="svg-stroke"/>
+              <polygon points="32,28 38,18 44,28" fill="#F6D27A" class="svg-stroke"/>
+              <path d="M20 42V32A4 4 0 0 1 28 32V42Z" fill="#B9DAA5" class="svg-stroke"/>
+            </svg>
+          </div>
+          <div>
+            <span class="ehon-badge bg-coral px-3 py-0.5 text-xs mb-1">DISNEYLAND HONG KONG</span>
+            <h2 class="text-2xl sm:text-3xl font-black">香港迪士尼樂園・全攻略秘笈</h2>
+            <p class="text-sm sm:text-base font-bold">營業時間 10:30–20:00（我們買提早入園 09:30 入場！）</p>
+          </div>
+        </div>
+        <div class="ehon-box-sm bg-white px-4 py-2.5 text-xs sm:text-sm font-bold">
+          <div>🌞 <strong>早上主攻</strong>：魔雪奇緣世界、幻想世界、明日世界</div>
+          <div>🌇 <strong>下午主攻</strong>：美國小鎮大街、探險世界、灰熊山谷、迷離莊園、反斗奇兵</div>
+        </div>
+      </div>
+
+      <!-- 5-0. 新增：手繪風香港迪士尼樂園 8 大園區互動地圖 (入口位於正下方中央) -->
+      <div class="ehon-card bg-cream p-5 sm:p-7 space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="ehon-badge bg-mizu px-3 py-0.5 text-xs">🗺️ PARK MAP</span>
+              <h3 class="text-xl sm:text-2xl font-black">香港迪士尼樂園・繪本風園區方位地圖</h3>
+            </div>
+            <p class="text-xs sm:text-sm font-bold opacity-85 mt-1">
+              依照真實園區相對地理位置繪製（<strong>正下方中間為樂園入口</strong>）。點擊地圖上的任一園區，可直接跳轉查看該區設施！
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs font-black">
+            <span class="ehon-badge bg-mizu px-2.5 py-1">☀️ 早上順時針攻略北＆東側</span>
+            <span class="ehon-badge bg-yamabuki px-2.5 py-1">🌇 下午攻略西＆南側園區</span>
+          </div>
+        </div>
+
+        <!-- 手繪 SVG 迪士尼樂園地圖 -->
+        <div class="ehon-card bg-washi p-3 sm:p-5 overflow-hidden">
+          <svg viewBox="0 0 1040 760" class="w-full h-auto select-none" role="img" aria-label="香港迪士尼樂園八大園區相對位置繪本地圖，入口在正下方中央">
+            <!-- 和紙白底與外框裝飾線 -->
+            <rect x="10" y="10" width="1020" height="740" rx="22" fill="#FFFCF6" class="svg-stroke"/>
+
+            <!-- 背景裝飾草叢與小雲朵 (純平塗不干擾卡片) -->
+            <circle cx="95" cy="675" r="18" fill="#B9DAA5" opacity="0.45"/>
+            <circle cx="120" cy="682" r="14" fill="#B9DAA5" opacity="0.45"/>
+            <circle cx="920" cy="665" r="20" fill="#B9DAA5" opacity="0.45"/>
+            <circle cx="948" cy="675" r="14" fill="#B9DAA5" opacity="0.45"/>
+            <circle cx="775" cy="115" r="16" fill="#A8D3E6" opacity="0.35"/>
+
+            <!-- ================= 園區環狀步道虛線 (連接各園區與中央城堡廣場) ================= -->
+            <!-- 1. 南北主幹道：正門入口 (530,700) -> 美國小鎮大街 (530,545) -> 城堡廣場 (530,380) -> 幻想世界 (530,225) -> 魔雪奇緣世界 (530,80) -->
+            <path d="M530 680 L530 95" fill="none" stroke="#3E3A39" stroke-width="16" stroke-linecap="round"/>
+            <path d="M530 680 L530 95" fill="none" stroke="#FFF7E8" stroke-width="10" stroke-linecap="round"/>
+
+            <!-- 2. 西側與西北環道：城堡廣場 (530,380) -> 探險世界 (310,500) -> 灰熊山谷 (135,515) -> 迷離莊園 (140,305) -> 反斗奇兵 (155,115) -> 幻想世界 (530,225) -->
+            <path d="M530 380 L315 510 L140 510 L140 310 L155 120 L530 220"
+                  fill="none" stroke="#3E3A39" stroke-width="9" stroke-dasharray="10 10" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <!-- 3. 東側環道：城堡廣場 (530,380) -> 明日世界 (855,345) -> 幻想世界 (530,225) -->
+            <path d="M530 380 L855 350 L530 220"
+                  fill="none" stroke="#3E3A39" stroke-width="9" stroke-dasharray="10 10" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <!-- 羅盤方向標 (右上角獨立留白區) -->
+            <g transform="translate(955, 78)">
+              <circle cx="0" cy="0" r="34" fill="#FFFFFF" class="svg-stroke"/>
+              <polygon points="0,-24 7,0 0,-5 -7,0" fill="#F2A497" class="svg-stroke"/>
+              <polygon points="0,24 7,0 0,5 -7,0" fill="#A8D3E6" class="svg-stroke"/>
+              <text x="0" y="-27" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">N</text>
+            </g>
+
+            <!-- 左上角圖例小貼紙 -->
+            <g transform="translate(36, 26)">
+              <rect x="0" y="0" width="190" height="34" rx="10" fill="#FFF7E8" class="svg-stroke"/>
+              <text x="95" y="22" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">👆 點擊任一園區卡片篩選設施</text>
+            </g>
+
+            <!-- ================= 1. 魔雪奇緣世界 (World of Frozen - 最北端正上方) ================= -->
+            <!-- 範圍: X=390~670 (寬280), Y=24~144 (高120) -->
+            <g class="map-zone" data-land="魔雪奇緣世界" transform="translate(390, 24)" tabindex="0" role="button" aria-label="篩選魔雪奇緣世界設施">
+              <rect class="map-zone-hit" x="-6" y="-6" width="292" height="132" rx="24"/>
+              <g class="map-zone-inner">
+                <rect class="map-card-bg svg-stroke" x="0" y="0" width="280" height="120" rx="20" fill="#A8D3E6"/>
+                <!-- 艾莎北山與冰宮小插圖 -->
+                <polygon points="18,92 48,26 78,92" fill="#FFFFFF" class="svg-stroke"/>
+                <polygon points="52,92 80,18 108,92" fill="#FFFCF6" class="svg-stroke"/>
+                <polygon points="71,40 80,18 89,40" fill="#A8D3E6" class="svg-stroke"/>
+                <!-- 園區標題與重點 -->
+                <rect x="116" y="14" width="148" height="28" rx="9" fill="#FFFFFF" class="svg-stroke"/>
+                <text x="190" y="33" text-anchor="middle" font-size="14" font-weight="900" fill="#3E3A39">❄️ 魔雪奇緣世界</text>
+                <text x="190" y="58" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">★ 魔雪奇幻之旅</text>
+                <text x="190" y="76" text-anchor="middle" font-size="12" font-weight="700" fill="#3E3A39">雪嶺滑雪橇</text>
+                <rect x="116" y="86" width="148" height="22" rx="7" fill="#F6D27A" class="svg-stroke"/>
+                <text x="190" y="101" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">🌅 09:30 提早入園第一站</text>
+              </g>
+            </g>
+
+            <!-- ================= 2. 反斗奇兵大本營 (Toy Story Land - 左上西北側) ================= -->
+            <!-- 範圍: X=36~286 (寬250), Y=82~206 (高124) -->
+            <g class="map-zone" data-land="反斗奇兵大本營" transform="translate(36, 82)" tabindex="0" role="button" aria-label="篩選反斗奇兵大本營設施">
+              <rect class="map-zone-hit" x="-6" y="-6" width="262" height="136" rx="24"/>
+              <g class="map-zone-inner">
+                <rect class="map-card-bg svg-stroke" x="0" y="0" width="250" height="124" rx="20" fill="#F6D27A"/>
+                <!-- 降落傘插圖 -->
+                <path d="M20 56 C20 24, 72 24, 72 56 Z" fill="#B9DAA5" class="svg-stroke"/>
+                <line x1="46" y1="56" x2="46" y2="86" class="svg-stroke"/>
+                <rect x="32" y="82" width="28" height="14" rx="4" fill="#F2A497" class="svg-stroke"/>
+                <!-- 園區標題與重點 -->
+                <rect x="84" y="14" width="152" height="28" rx="9" fill="#FFFFFF" class="svg-stroke"/>
+                <text x="160" y="33" text-anchor="middle" font-size="14" font-weight="900" fill="#3E3A39">🦖 反斗奇兵大本營</text>
+                <text x="160" y="58" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">★ 玩具兵團跳降傘</text>
+                <text x="160" y="76" text-anchor="middle" font-size="12" font-weight="700" fill="#3E3A39">沖天遙控車・彈弓狗</text>
+                <rect x="92" y="88" width="136" height="22" rx="7" fill="#B9DAA5" class="svg-stroke"/>
+                <text x="160" y="103" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">⚡ 跳降傘有 Single Ride</text>
+              </g>
+            </g>
+
+            <!-- ================= 3. 幻想世界 (Fantasyland - 中央偏上，城堡正後方) ================= -->
+            <!-- 範圍: X=390~670 (寬280), Y=176~296 (高120) -->
+            <g class="map-zone" data-land="幻想世界" transform="translate(390, 176)" tabindex="0" role="button" aria-label="篩選幻想世界設施">
+              <rect class="map-zone-hit" x="-6" y="-6" width="292" height="132" rx="24"/>
+              <g class="map-zone-inner">
+                <rect class="map-card-bg svg-stroke" x="0" y="0" width="280" height="120" rx="20" fill="#F2A497"/>
+                <!-- 旋轉木馬插圖 -->
+                <polygon points="18,52 52,20 86,52" fill="#F6D27A" class="svg-stroke"/>
+                <rect x="26" y="52" width="52" height="36" rx="5" fill="#FFFFFF" class="svg-stroke"/>
+                <line x1="52" y1="52" x2="52" y2="88" class="svg-stroke"/>
+                <!-- 園區標題與重點 -->
+                <rect x="102" y="14" width="162" height="28" rx="9" fill="#FFFFFF" class="svg-stroke"/>
+                <text x="183" y="33" text-anchor="middle" font-size="14" font-weight="900" fill="#3E3A39">🎠 幻想世界</text>
+                <text x="183" y="58" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">🎭 12:30 必看《魔法書房》</text>
+                <text x="183" y="76" text-anchor="middle" font-size="12" font-weight="700" fill="#3E3A39">小熊維尼・小飛象・旋轉木馬</text>
+                <rect x="108" y="86" width="150" height="22" rx="7" fill="#FFF7E8" class="svg-stroke"/>
+                <text x="183" y="101" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">🌅 3 項設施支援提早入園</text>
+              </g>
+            </g>
+
+            <!-- ================= 4. 迷離莊園 (Mystic Point - 左中段西側) ================= -->
+            <!-- 範圍: X=36~276 (寬240), Y=248~368 (高120) -->
+            <g class="map-zone" data-land="迷離莊園" transform="translate(36, 248)" tabindex="0" role="button" aria-label="篩選迷離莊園設施">
+              <rect class="map-zone-hit" x="-6" y="-6" width="252" height="132" rx="24"/>
+              <g class="map-zone-inner">
+                <rect class="map-card-bg svg-stroke" x="0" y="0" width="240" height="120" rx="20" fill="#A8D3E6"/>
+                <!-- 迷離大宅插圖 -->
+                <rect x="20" y="46" width="50" height="50" fill="#FFFCF6" class="svg-stroke"/>
+                <polygon points="14,46 45,18 76,46" fill="#F2A497" class="svg-stroke"/>
+                <rect x="37" y="66" width="16" height="30" fill="#F6D27A" class="svg-stroke"/>
+                <!-- 園區標題與重點 -->
+                <rect x="86" y="14" width="138" height="28" rx="9" fill="#FFFFFF" class="svg-stroke"/>
+                <text x="155" y="33" text-anchor="middle" font-size="14" font-weight="900" fill="#3E3A39">🎩 迷離莊園</text>
+                <text x="155" y="60" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">★ 必玩：迷離大宅</text>
+                <text x="155" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#3E3A39">港迪獨有無軌電磁車</text>
+                <rect x="86" y="88" width="138" height="20" rx="6" fill="#FFF7E8" class="svg-stroke"/>
+                <text x="155" y="102" text-anchor="middle" font-size="10" font-weight="900" fill="#3E3A39">✨ 視覺特效滿分必去</text>
+              </g>
+            </g>
+
+            <!-- ================= 5. 中央核心地標：奇妙夢想城堡 ＆ 廣場中央 (Center Hub) ================= -->
+            <!-- 範圍: X=410~650 (寬240), Y=330~446 (高116) -->
+            <g class="map-zone" data-land="all" transform="translate(410, 330)" tabindex="0" role="button" aria-label="顯示全園區所有設施">
+              <rect class="map-zone-hit" x="-6" y="-6" width="252" height="128" rx="24"/>
+              <g class="map-zone-inner">
+                <rect class="map-card-bg svg-stroke" x="0" y="0" width="240" height="116" rx="22" fill="#FFF7E8"/>
+                <!-- 城堡插圖 -->
+                <rect x="26" y="42" width="38" height="52" fill="#FFFFFF" class="svg-stroke"/>
+                <polygon points="22,42 45,12 68,42" fill="#F2A497" class="svg-stroke"/>
+                <rect x="14" y="56" width="12" height="38" fill="#F6D27A" class="svg-stroke"/>
+                <rect x="64" y="56" width="12" height="38" fill="#F6D27A" class="svg-stroke"/>
+                <path d="M39 94 V72 A6 6 0 0 1 51 72 V94 Z" fill="#A8D3E6" class="svg-stroke"/>
+                <!-- 標題與提醒 -->
+                <rect x="84" y="14" width="142" height="26" rx="8" fill="#F2A497" class="svg-stroke"/>
+                <text x="155" y="31" text-anchor="middle" font-size="13" font-weight="900" fill="#3E3A39">🏰 奇妙夢想城堡</text>
+                <text x="155" y="56" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">📸 早上順光拍城堡最美</text>
+                <text x="155" y="74" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">🎆 20:00 廣場中央看煙火</text>
+                <rect x="88" y="84" width="134" height="20" rx="6" fill="#FFFFFF" class="svg-stroke"/>
+                <text x="155" y="98" text-anchor="middle" font-size="10" font-weight="900" fill="#3E3A39">🔍 點擊查看全園設施</text>
+              </g>
+            </g>
+
+            <!-- ================= 6. 明日世界 (Tomorrowland - 右側東半部獨立大區) ================= -->
+            <!-- 範圍: X=730~1000 (寬270), Y=260~430 (高170) -->
+            <g class="map-zone" data-land="明日世界" transform="translate(730, 260)" tabindex="0" role="button" aria-label="篩選明日世界設施">
+              <rect class="map-zone-hit" x="-6" y="-6" width="282" height="182" rx="26"/>
+              <g class="map-zone-inner">
+                <rect class="map-card-bg svg-stroke" x="0" y="0" width="270" height="170" rx="22" fill="#A8D3E6"/>
+                <!-- 太空山圓頂與火箭插圖 -->
+                <path d="M18 118 A38 38 0 0 1 94 118 Z" fill="#FFFFFF" class="svg-stroke"/>
+                <line x1="28" y1="102" x2="84" y2="102" class="svg-stroke"/>
+                <polygon points="56,52 68,74 44,74" fill="#F2A497" class="svg-stroke"/>
+                <!-- 園區標題與重點 -->
+                <rect x="102" y="16" width="152" height="28" rx="9" fill="#FFFFFF" class="svg-stroke"/>
+                <text x="178" y="35" text-anchor="middle" font-size="15" font-weight="900" fill="#3E3A39">🚀 明日世界</text>
+                <text x="178" y="64" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">★ 星戰極速穿梭 (Single)</text>
+                <text x="178" y="84" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">★ 鐵甲奇俠飛行之旅</text>
+                <text x="178" y="104" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">★ 蟻俠與黃蜂女射擊</text>
+                <rect x="20" y="130" width="230" height="24" rx="8" fill="#F6D27A" class="svg-stroke"/>
+                <text x="135" y="146" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">🌞 早上攻完魔雪奇緣接著玩這區！</text>
+              </g>
+            </g>
+
+            <!-- ================= 7. 灰熊山谷 (Grizzly Gulch - 左下偏外側/西南角) ================= -->
+            <!-- 範圍: X=26~236 (寬210), Y=435~575 (高140) -->
+            <g class="map-zone" data-land="灰熊山谷" transform="translate(26, 435)" tabindex="0" role="button" aria-label="篩選灰熊山谷設施">
+              <rect class="map-zone-hit" x="-6" y="-6" width="222" height="152" rx="24"/>
+              <g class="map-zone-inner">
+                <rect class="map-card-bg svg-stroke" x="0" y="0" width="210" height="140" rx="20" fill="#F6D27A"/>
+                <!-- 灰熊山岩峰插圖 -->
+                <polygon points="14,92 38,34 62,92" fill="#F2A497" class="svg-stroke"/>
+                <polygon points="40,92 58,48 76,92" fill="#FFFFFF" class="svg-stroke"/>
+                <!-- 園區標題與重點 -->
+                <rect x="76" y="14" width="120" height="28" rx="9" fill="#FFFFFF" class="svg-stroke"/>
+                <text x="136" y="33" text-anchor="middle" font-size="14" font-weight="900" fill="#3E3A39">🐻 灰熊山谷</text>
+                <text x="136" y="62" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">★ 灰熊山極速礦車</text>
+                <text x="136" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#3E3A39">驚險刺激戶外過山車！</text>
+                <rect x="20" y="102" width="170" height="22" rx="7" fill="#B9DAA5" class="svg-stroke"/>
+                <text x="105" y="117" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">⚡ 支援 Single Ride 單人通道</text>
+              </g>
+            </g>
+
+            <!-- ================= 8. 探險世界 (Adventureland - 左下偏內側，與灰熊山谷、小鎮大街保持充足間距) ================= -->
+            <!-- 範圍: X=258~468 (寬210), Y=455~595 (高140) -->
+            <g class="map-zone" data-land="探險世界" transform="translate(258, 455)" tabindex="0" role="button" aria-label="篩選探險世界設施">
+              <rect class="map-zone-hit" x="-6" y="-6" width="222" height="152" rx="24"/>
+              <g class="map-zone-inner">
+                <rect class="map-card-bg svg-stroke" x="0" y="0" width="210" height="140" rx="20" fill="#B9DAA5"/>
+                <!-- 棕櫚樹與河流小插圖 -->
+                <line x1="34" y1="88" x2="34" y2="44" class="svg-stroke"/>
+                <path d="M16 48 Q34 28 52 48" fill="#F6D27A" class="svg-stroke"/>
+                <path d="M14 92 Q34 82 54 92" fill="none" class="svg-stroke"/>
+                <!-- 園區標題與重點 -->
+                <rect x="66" y="14" width="130" height="28" rx="9" fill="#FFFFFF" class="svg-stroke"/>
+                <text x="131" y="33" text-anchor="middle" font-size="14" font-weight="900" fill="#3E3A39">🌴 探險世界</text>
+                <text x="131" y="60" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">★ 獅子王慶典 (坐左邊)</text>
+                <text x="131" y="78" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">★ 森林河流之旅</text>
+                <rect x="20" y="102" width="170" height="22" rx="7" fill="#FFF7E8" class="svg-stroke"/>
+                <text x="105" y="117" text-anchor="middle" font-size="10" font-weight="900" fill="#3E3A39">🌊 魔海奇緣劇場・泰山樹屋暫停</text>
+              </g>
+            </g>
+
+            <!-- ================= 9. 美國小鎮大街 (Main Street, U.S.A. - 中央偏下，完全不與探險世界重疊) ================= -->
+            <!-- 範圍: X=492~732 (寬240), Y=485~615 (高130) -->
+            <g class="map-zone" data-land="美國小鎮大街" transform="translate(492, 485)" tabindex="0" role="button" aria-label="篩選美國小鎮大街項目">
+              <rect class="map-zone-hit" x="-6" y="-6" width="252" height="142" rx="24"/>
+              <g class="map-zone-inner">
+                <rect class="map-card-bg svg-stroke" x="0" y="0" width="240" height="130" rx="20" fill="#F6D27A"/>
+                <!-- 復古大街屋頂插圖 -->
+                <rect x="14" y="34" width="28" height="62" rx="4" fill="#FFFCF6" class="svg-stroke"/>
+                <polygon points="10,34 28,18 46,34" fill="#F2A497" class="svg-stroke"/>
+                <rect x="198" y="34" width="28" height="62" rx="4" fill="#FFFCF6" class="svg-stroke"/>
+                <polygon points="194,34 212,18 230,34" fill="#A8D3E6" class="svg-stroke"/>
+                <!-- 標題與重點 -->
+                <rect x="52" y="12" width="136" height="26" rx="8" fill="#FFFFFF" class="svg-stroke"/>
+                <text x="120" y="29" text-anchor="middle" font-size="13" font-weight="900" fill="#3E3A39">🛍️ 美國小鎮大街</text>
+                <text x="120" y="55" text-anchor="middle" font-size="11" font-weight="900" fill="#3E3A39">🎈 15:30 好友巡遊派對</text>
+                <text x="120" y="73" text-anchor="middle" font-size="11" font-weight="700" fill="#3E3A39">🍦 北海道5.0牛乳白桃雪糕</text>
+                <text x="120" y="91" text-anchor="middle" font-size="11" font-weight="700" fill="#3E3A39">🏅 右手邊 City Hall 領徽章</text>
+                <rect x="48" y="99" width="144" height="20" rx="6" fill="#FFF7E8" class="svg-stroke"/>
+                <text x="120" y="113" text-anchor="middle" font-size="10" font-weight="900" fill="#3E3A39">🎁 廣場時尚店換購票小禮物</text>
+              </g>
+            </g>
+
+            <!-- ================= 10. 正下方中央：迪士尼樂園正門入口 ＆ 火車站 (Entrance) ================= -->
+            <!-- 範圍: X=390~670 (寬280), Y=655~730 (高75) -->
+            <g transform="translate(390, 655)">
+              <rect x="0" y="0" width="280" height="72" rx="18" fill="#B9DAA5" class="svg-stroke"/>
+              <polygon points="105,0 140,-18 175,0" fill="#F2A497" class="svg-stroke"/>
+              <circle cx="140" cy="-6" r="5" fill="#FFFCF6" class="svg-stroke"/>
+              <text x="140" y="28" text-anchor="middle" font-size="15" font-weight="900" fill="#3E3A39">🚩 香港迪士尼樂園・正門入口</text>
+              <text x="140" y="51" text-anchor="middle" font-size="12" font-weight="900" fill="#3E3A39">⬆️ 09:30 提早入園從這裡出發往上走！</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- 地圖點擊篩選提示列 -->
+        <div class="flex flex-wrap items-center justify-between gap-2 bg-white px-4 py-2.5 rounded-xl border-2 border-ink text-xs sm:text-sm font-bold">
+          <span id="mapSelectedStatus">👆 點擊上方地圖中的任一園區，下方設施列表會自動幫你篩選出該園區項目！</span>
+          <button type="button" id="resetMapFilterBtn" class="ehon-badge bg-yamabuki px-3 py-1 text-xs cursor-pointer">顯示必玩推薦</button>
+        </div>
+      </div>
+
+      <!-- 5-1. 入園必看 6 大注意事項 -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-black flex items-center gap-2">
+          <span class="inline-block w-4 h-4 rounded-full bg-coral border-2 border-ink"></span>
+          入園必看 6 大好康與注意事項
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="ehon-card ehon-card-hover p-4 bg-white">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="ehon-badge bg-coral px-2.5 py-0.5 text-xs">好康 1</span>
+              <h4 class="font-black text-base">🎁 官網購票兌換小禮物</h4>
+            </div>
+            <p class="text-sm font-bold opacity-90">在官網買門票，可憑證到園區內的<strong>「廣場時尚店」</strong>或<strong>「安仔玩具箱」</strong>兌換專屬小禮物！</p>
+          </div>
+
+          <div class="ehon-card ehon-card-hover p-4 bg-white">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="ehon-badge bg-yamabuki px-2.5 py-0.5 text-xs">必領 2</span>
+              <h4 class="font-black text-base">🏅 免費領「第一次來迪士尼」徽章</h4>
+            </div>
+            <p class="text-sm font-bold opacity-90">剛入園右手邊的 <strong>City Hall（市鎮會堂）</strong>，可以直接向工作人員免費索取紀念徽章別在身上！</p>
+          </div>
+
+          <div class="ehon-card ehon-card-hover p-4 bg-white">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="ehon-badge bg-mizu px-2.5 py-0.5 text-xs">攝影 3</span>
+              <h4 class="font-black text-base">📸 早上順光拍奇妙夢想城堡</h4>
+            </div>
+            <p class="text-sm font-bold opacity-90"><strong>一定要早上拍城堡照！</strong>早上陽光順光人臉跟城堡最美，下午過去拍會大逆光喔！</p>
+          </div>
+
+          <div class="ehon-card ehon-card-hover p-4 bg-white">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="ehon-badge bg-wakatake px-2.5 py-0.5 text-xs">必備 4</span>
+              <h4 class="font-black text-base">💧 必帶隨身水瓶裝水</h4>
+            </div>
+            <p class="text-sm font-bold opacity-90">園區內飲品較貴，記得隨身攜帶水瓶，<strong>每個廁所旁邊都有飲水機</strong>可以免費裝水補充水分。</p>
+          </div>
+
+          <div class="ehon-card ehon-card-hover p-4 bg-white">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="ehon-badge bg-yamabuki px-2.5 py-0.5 text-xs">驚喜 5</span>
+              <h4 class="font-black text-base">📋 園內問卷調查送小禮物</h4>
+            </div>
+            <p class="text-sm font-bold opacity-90">在園區內散步若遇到工作人員邀請填寫問卷調查，熱心回答通常會送迪士尼小禮物！</p>
+          </div>
+
+          <div class="ehon-card ehon-card-hover p-4 bg-white">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="ehon-badge bg-coral px-2.5 py-0.5 text-xs">美食 6</span>
+              <h4 class="font-black text-base">🍦 北海道牛乳白桃雪糕＆大街餐廳</h4>
+            </div>
+            <p class="text-sm font-bold opacity-90">美國小鎮大街必吃<strong>「北海道 5.0 牛乳配白桃味雪糕」</strong>；晚餐可去<strong>「美國大街咖啡廳」</strong>無低消限制又好吃！</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5-2. 必看劇場與遊行時刻表 -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-black flex items-center gap-2">
+          <span class="inline-block w-4 h-4 rounded-full bg-yamabuki border-2 border-ink"></span>
+          五大劇場、遊行與夜間煙火時刻表
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- 魔法書房 (已移除多餘的 border-l-8，與其他所有卡片完全一致) -->
+          <div class="ehon-card p-5 bg-white">
+            <div class="flex items-center justify-between mb-2">
+              <span class="ehon-badge bg-coral px-3 py-0.5 text-xs">★ 必看三大秀</span>
+              <span class="text-xs font-black bg-washi px-2 py-0.5 rounded border-2 border-ink">幻想世界・30分鐘</span>
+            </div>
+            <h4 class="text-lg font-black mb-2">📖 魔法書房 (Mickey and the Wondrous Book)</h4>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="px-2.5 py-1 rounded-lg bg-yamabuki border-2 border-ink text-xs font-black">12:30 (鎖定場次)</span>
+              <span class="px-2.5 py-1 rounded-lg bg-washi border-2 border-ink text-xs font-bold">13:45</span>
+              <span class="px-2.5 py-1 rounded-lg bg-washi border-2 border-ink text-xs font-bold">16:30</span>
+              <span class="px-2.5 py-1 rounded-lg bg-washi border-2 border-ink text-xs font-bold">18:15</span>
+            </div>
+            <p class="text-xs font-bold bg-cream p-2.5 rounded-xl border-2 border-ink">💡 攻略：超熱門室內音樂劇，務必<strong>提前 30–40 分鐘（約 12:00）</strong>去排隊拿好位置！</p>
+          </div>
+
+          <!-- 獅子王慶典 -->
+          <div class="ehon-card p-5 bg-white">
+            <div class="flex items-center justify-between mb-2">
+              <span class="ehon-badge bg-coral px-3 py-0.5 text-xs">★ 必看三大秀</span>
+              <span class="text-xs font-black bg-washi px-2 py-0.5 rounded border-2 border-ink">探險世界・30分鐘</span>
+            </div>
+            <h4 class="text-lg font-black mb-2">🦁 獅子王慶典 (Festival of the Lion King)</h4>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="px-2.5 py-1 rounded-lg bg-mizu border-2 border-ink text-xs font-black">下午時段排入 (依當日 App 場次)</span>
+            </div>
+            <p class="text-xs font-bold bg-cream p-2.5 rounded-xl border-2 border-ink">💡 選位秘訣：圓形劇場視野極佳，進場記得<strong>「往左邊坐」</strong>互動感與視角超讚！</p>
+          </div>
+
+          <!-- 魔海奇緣凱旋慶典 -->
+          <div class="ehon-card p-5 bg-white">
+            <div class="flex items-center justify-between mb-2">
+              <span class="ehon-badge bg-wakatake px-3 py-0.5 text-xs">戶外劇場</span>
+              <span class="text-xs font-black bg-washi px-2 py-0.5 rounded border-2 border-ink">探險世界・20分鐘</span>
+            </div>
+            <h4 class="text-lg font-black mb-2">🌊 魔海奇緣凱旋慶典 (Moana)</h4>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="px-2.5 py-1 rounded-lg bg-washi border-2 border-ink text-xs font-bold">12:30</span>
+              <span class="px-2.5 py-1 rounded-lg bg-washi border-2 border-ink text-xs font-bold">14:30</span>
+              <span class="px-2.5 py-1 rounded-lg bg-washi border-2 border-ink text-xs font-bold">16:30</span>
+              <span class="px-2.5 py-1 rounded-lg bg-washi border-2 border-ink text-xs font-bold">18:00</span>
+            </div>
+            <p class="text-xs font-bold bg-cream p-2.5 rounded-xl border-2 border-ink">💡 攻略：探險世界順路可看，氣氛歡樂互動多。</p>
+          </div>
+
+          <!-- 迪士尼好友巡遊派對 -->
+          <div class="ehon-card p-5 bg-white">
+            <div class="flex items-center justify-between mb-2">
+              <span class="ehon-badge bg-yamabuki px-3 py-0.5 text-xs">日間大遊行</span>
+              <span class="text-xs font-black bg-washi px-2 py-0.5 rounded border-2 border-ink">美國小鎮大街・30分鐘</span>
+            </div>
+            <h4 class="text-lg font-black mb-2">🎈 迪士尼好友巡遊派對</h4>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="px-2.5 py-1 rounded-lg bg-yamabuki border-2 border-ink text-xs font-black">15:30 準時開始</span>
+            </div>
+            <p class="text-xs font-bold bg-cream p-2.5 rounded-xl border-2 border-ink">💡 攻略：預計 <strong>15:15</strong> 先到美國小鎮大街卡位等遊行車隊！</p>
+          </div>
+
+          <!-- 星夢光影之旅 (夜間煙火) -->
+          <div class="ehon-card p-5 bg-white md:col-span-2">
+            <div class="flex items-center justify-between mb-2">
+              <span class="ehon-badge bg-coral px-3 py-0.5 text-xs">★ 必看壓軸夜間大秀</span>
+              <span class="text-xs font-black bg-washi px-2 py-0.5 rounded border-2 border-ink">奇妙夢想城堡前・20分鐘</span>
+            </div>
+            <h4 class="text-lg font-black mb-2">🎆 星夢光影之旅 (Momentous 夜間城堡煙火秀)</h4>
+            <div class="flex flex-wrap items-center gap-2 mb-3">
+              <span class="px-3 py-1 rounded-lg bg-coral border-2 border-ink text-xs font-black">20:00 施放</span>
+              <span class="text-xs font-bold">結合立體光雕投影、水幕、火焰與璀璨煙火！下方整理 5 大觀賞位置優缺點：</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5-3. 煙火觀賞位置優缺點全攻略 -->
+      <div class="ehon-card bg-white p-5 sm:p-6 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <h3 class="text-lg sm:text-xl font-black">🎆 《星夢光影之旅》5 大觀賞位置優缺點評比</h3>
+          <span class="ehon-badge bg-yamabuki px-3 py-1 text-xs">筆記首選：廣場中央免費區！</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- 位置 1：廣場中央 -->
+          <div class="ehon-box-sm bg-yamabuki p-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-black text-base">1. 廣場中央</span>
+                <span class="ehon-badge bg-coral px-2.5 py-0.5 text-xs">★ 我們的首選</span>
+              </div>
+              <p class="text-xs sm:text-sm font-bold mb-2">👍 <strong>優點</strong>：最佳免費觀賞位置，正面看城堡立體投影非常清楚！</p>
+              <p class="text-xs sm:text-sm font-bold opacity-85">👎 <strong>缺點</strong>：沒有辦法同時看到美國小鎮大街兩側建築的投影效果。</p>
+            </div>
+          </div>
+
+          <!-- 位置 2：美國小鎮大街 -->
+          <div class="ehon-box-sm bg-washi p-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-black text-base">2. 美國小鎮大街</span>
+                <span class="ehon-badge bg-mizu px-2.5 py-0.5 text-xs">沉浸光影</span>
+              </div>
+              <p class="text-xs sm:text-sm font-bold mb-2">👍 <strong>優點</strong>：擁有最佳雙側大街投影＋身歷其境的環繞音效。</p>
+              <p class="text-xs sm:text-sm font-bold opacity-85">👎 <strong>缺點</strong>：旺日需提前 60–90 分鐘卡位；一般日也需提前 30–40 分鐘等待。</p>
+            </div>
+          </div>
+
+          <!-- 位置 3：尊享卡保留區 -->
+          <div class="ehon-box-sm bg-washi p-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-black text-base">3. 尊享卡保留區（城堡前）</span>
+                <span class="ehon-badge bg-white px-2.5 py-0.5 text-xs">付費專區</span>
+              </div>
+              <p class="text-xs sm:text-sm font-bold mb-2">👍 <strong>優點</strong>：最前方指定觀賞區，只需按憑證時間輕鬆入場。</p>
+              <p class="text-xs sm:text-sm font-bold opacity-85">👎 <strong>缺點</strong>：需額外花錢購買，且平日免費位置視野其實差不多好。</p>
+            </div>
+          </div>
+
+          <!-- 位置 4：門口火車站 -->
+          <div class="ehon-box-sm bg-washi p-4 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-black text-base">4. 門口火車站二樓</span>
+                <span class="ehon-badge bg-wakatake px-2.5 py-0.5 text-xs">撤退最快</span>
+              </div>
+              <p class="text-xs sm:text-sm font-bold mb-2">👍 <strong>優點</strong>：居高望遠，可拍小鎮大街＋城堡＋煙火全景，散場離出口最近。</p>
+              <p class="text-xs sm:text-sm font-bold opacity-85">👎 <strong>缺點</strong>：距離城堡太遠，手機拍照細節不清楚，只適合廣角全景。</p>
+            </div>
+          </div>
+
+          <!-- 位置 5：幻想世界（城堡背面） -->
+          <div class="ehon-box-sm bg-washi p-4 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-black text-base">5. 幻想世界（城堡背面）</span>
+                <span class="ehon-badge bg-white px-2.5 py-0.5 text-xs">避開人潮</span>
+              </div>
+              <p class="text-xs sm:text-sm font-bold mb-2">👍 <strong>優點</strong>：完全避開大街擁擠人潮，一樣看得到高空煙火、聽得到音樂。</p>
+              <p class="text-xs sm:text-sm font-bold opacity-85">👎 <strong>缺點</strong>：看不到城堡正面投影，也沒有美國小鎮大街的光影效果。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5-4. 園區設施互動篩選器 -->
+      <div id="disney-attractions-filter" class="ehon-card bg-cream p-5 sm:p-6 space-y-5 scroll-mt-24">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-black">🎢 迪士尼園區 28 項設施＆娛樂互動篩選器</h3>
+            <p class="text-xs sm:text-sm font-bold opacity-80">完整收錄試算表第 3 分頁「迪士尼設施介紹」：包含可怕程度、推薦度、提早入園與 Single Rider 標記</p>
+          </div>
+          <!-- 篩選按鈕群 -->
+          <div class="flex flex-wrap gap-2" id="disneyFilterGroup">
+            <button type="button" data-filter="must" class="disney-filter-btn ehon-btn bg-coral px-3.5 py-1.5 text-xs sm:text-sm font-black">★ 必玩＆必看推薦</button>
+            <button type="button" data-filter="early" class="disney-filter-btn ehon-btn bg-white px-3.5 py-1.5 text-xs sm:text-sm font-bold">🌅 支援提早入園 (5)</button>
+            <button type="button" data-filter="single" class="disney-filter-btn ehon-btn bg-white px-3.5 py-1.5 text-xs sm:text-sm font-bold">⚡ 單人通道 Single Ride (3)</button>
+            <button type="button" data-filter="all" class="disney-filter-btn ehon-btn bg-white px-3.5 py-1.5 text-xs sm:text-sm font-bold">📋 全部 28 項總覽</button>
+            <button type="button" data-filter="closed" class="disney-filter-btn ehon-btn bg-white px-3.5 py-1.5 text-xs sm:text-sm font-bold">🚧 暫停開放提醒 (4)</button>
+          </div>
+        </div>
+
+        <!-- 設施卡片網格 -->
+        <div id="disneyRidesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- 由 JS 渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. 口袋美食 ＆ 6大蛋塔巡禮地圖清單 ================= -->
+    <section id="foodie" class="space-y-8 scroll-mt-20">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-yamabuki ehon-box-sm flex items-center justify-center">
+          <svg class="w-7 h-7" viewBox="0 0 28 28" fill="none">
+            <path d="M4 16 C4 22, 24 22, 24 16 L26 11 L2 11 Z" fill="#F2A497" class="svg-stroke"/>
+            <ellipse cx="14" cy="11" rx="12" ry="4.5" fill="#F6D27A" class="svg-stroke"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black">6 大蛋塔巡禮評比 ＆ 口袋美食地圖</h2>
+          <p class="text-sm sm:text-base font-bold opacity-80">試吃打勾做紀錄，最後一天決定買哪一家蛋塔回台灣！點擊按鈕直通 Google Maps</p>
+        </div>
+      </div>
+
+      <!-- 6-1. 6 大蛋塔巡禮互動評比卡 -->
+      <div class="ehon-card bg-cream p-5 sm:p-6 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h3 class="text-xl font-black">🥧 香港 6 大蛋塔名店巡禮（點擊可標記「已試吃」與「伴手禮首選」）</h3>
+            <p class="text-xs sm:text-sm font-bold opacity-80">完整收錄 Hashtag B、Soft Thunder、泰昌餅家（含沙翁）、Santa Nata、Bakehouse、Vission Bakery！</p>
+          </div>
+          <span id="tartSummaryBadge" class="ehon-badge bg-yamabuki px-3.5 py-1 text-xs sm:text-sm">已試吃 0 / 6 間</span>
+        </div>
+
+        <div id="eggTartGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- 由 JS 動態渲染 6 大蛋塔卡片 -->
+        </div>
+      </div>
+
+      <!-- 6-2. 口袋美食地圖清單 (附 Google Maps 連結) -->
+      <div class="space-y-4">
+        <h3 class="text-xl sm:text-2xl font-black flex items-center gap-2">
+          <span class="inline-block w-4 h-4 rounded-full bg-wakatake border-2 border-ink"></span>
+          在地人推薦＆口袋美食清單（附 Google Maps 一鍵導航）
+        </h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="restaurantGrid">
+          <!-- 由 JS 渲染美食卡片 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. 可打勾的互動行前待辦清單 (Checklist) ================= -->
+    <section id="checklist" class="space-y-6 scroll-mt-20">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 bg-wakatake ehon-box-sm flex items-center justify-center">
+            <svg class="w-7 h-7" viewBox="0 0 28 28" fill="none">
+              <rect x="4" y="4" width="20" height="20" rx="5" fill="#FFFFFF" class="svg-stroke"/>
+              <path d="M9 14L12.5 17.5L19.5 10.5" class="svg-stroke"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-black">行前確認清單（🐑 ＆ 🍉 專屬待辦）</h2>
+            <p class="text-sm sm:text-base font-bold opacity-80">同步試算表最新行前確認事項，打勾狀態自動儲存，也可新增隨身提醒</p>
+          </div>
+        </div>
+
+        <button id="resetChecklistBtn" type="button" class="ehon-btn bg-white px-4 py-2 text-xs sm:text-sm font-bold self-start sm:self-auto">
+          🔄 重置預設清單
+        </button>
+      </div>
+
+      <div class="ehon-card bg-white p-5 sm:p-7 space-y-6">
+        <!-- 進度條 -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between font-black text-sm sm:text-base">
+            <span>🎯 準備完成度</span>
+            <span id="checklistProgressText">0 / 10 完成 (0%)</span>
+          </div>
+          <div class="w-full h-6 bg-washi rounded-full border-[3px] border-ink p-0.5 overflow-hidden">
+            <div id="checklistProgressBar" class="h-full bg-wakatake rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <!-- 待辦項目列表 -->
+        <div id="checklistContainer" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <!-- 由 JS 渲染 -->
+        </div>
+
+        <!-- 新增自訂待辦事項 -->
+        <form id="addTodoForm" class="flex flex-col sm:flex-row gap-3 pt-2 border-t-[3px] border-ink">
+          <input id="newTodoInput" type="text" placeholder="新增自訂待辦事項（例如：帶轉接頭、行動電源、護照效期確認...）"
+            class="flex-1 ehon-box-sm bg-washi px-4 py-2.5 font-bold text-sm sm:text-base focus:outline-none focus:bg-cream" required>
+          <button type="submit" class="ehon-btn bg-yamabuki px-6 py-2.5 font-black text-sm sm:text-base flex-shrink-0">
+            ＋ 新增項目
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= 頁尾 Footer ================= -->
+  <footer class="mt-16 border-t-[3px] border-ink bg-cream py-8 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-coral ehon-box-sm flex items-center justify-center font-black">HK</div>
+        <div>
+          <p class="font-black text-base">2026 香港蛋塔巡禮＆迪士尼奇幻之旅</p>
+          <p class="text-xs font-bold opacity-75">2026/11/07 (六) - 11/10 (二) ・ 日系繪本風專屬行程手冊</p>
+        </div>
+      </div>
+      <a href="#hero" class="ehon-btn bg-white px-4 py-2 text-xs font-black">
+        ↑ 回到頂端
+      </a>
+    </div>
+  </footer>
+
+  <!-- ================= JavaScript 互動邏輯 ================= -->
+  <script>
+    // =========================================================================
+    // 1. 每日行程完整資料 (對應試算表第 1 分頁最新內容)
+    // =========================================================================
+    const itineraryData = {
+      1: {
+        dateTitle: "Day 1：11/7（星期六）",
+        themeTitle: "抵達香港 ＆ 維多利亞港璀璨夜景",
+        summaryBadge: "住宿：城景國際 (The Cityview)",
+        items: [
+          {
+            time: "13:55",
+            title: "桃園國際機場 T1 起飛出發 ➔ 16:00 抵達香港機場 T1",
+            mustGo: false,
+            transport: "✈️ 飛機 (TPE T1 ➔ HKG T1)",
+            category: "航班",
+            desc: "搭乘班機前往香港，預計 16:00 抵達香港赤鱲角機場第一航廈（預估入境時間約 1 小時）。"
+          },
+          {
+            time: "17:00",
+            title: "香港機場進市區（二選一交通方案）",
+            mustGo: false,
+            transport: "🚆 機場快線＋地鐵 / 🚌 機場巴士 A21",
+            category: "交通",
+            desc: "留言區投票傾向搭「機場快線」不怕尖峰塞車！兩種方案完整資訊：",
+            bullets: [
+              "方案 A（投票首選 🌟）【機場快線＋地鐵】：搭機場快線到「香港站」，轉乘地鐵紅線（荃灣線）到「油麻地」。票價 HK$120 + 13.2（可用八達通或先在 Klook 購買快線優惠票），車程約 50 分鐘，準時不怕塞車！",
+              "方案 B【搭機場巴士 A21】：搭到「文明里」站下車，步行 3 分鐘即達飯店。票價 HK$34.6（可直接刷八達通），車程約 60–90 分鐘（進市區為尖峰時段可能塞車）。"
+            ]
+          },
+          {
+            time: "18:30",
+            title: "城景國際 (The Cityview) Check-in",
+            mustGo: false,
+            transport: "🚶 步行",
+            category: "住宿",
+            desc: "辦理入住手續、放妥行李，準備出發吃香港第一餐！"
+          },
+          {
+            time: "晚餐",
+            title: "麥文記麵家（必去首選）或 興記菜館（Plan B）",
+            mustGo: true,
+            transport: "🚇 地鐵 / 步行",
+            category: "美食",
+            desc: "品嚐道地香港傳統雲吞麵滋味！",
+            bullets: [
+              "★ 首選必去【麥文記麵家】：首創全蝦雲吞、必點蠔油撈麵！",
+              "Plan B 備案【興記菜館】：炭火煲仔飯＋煎蠔餅（評價較兩極，作為備案）。"
+            ]
+          },
+          {
+            time: "20:00",
+            title: "維多利亞港夜景、「幻彩詠香江」＆ 尖沙咀甜點口袋名單",
+            mustGo: true,
+            transport: "🚇 地鐵至尖沙咀 / 步行至海濱",
+            category: "景點",
+            desc: "在維多利亞港欣賞最佳視野的 20:00「幻彩詠香江」燈光音樂秀，沿路順吃尖沙咀人氣甜點：",
+            bullets: [
+              "🧇 碼頭旁買【媽咪雞蛋仔 (Mammy Pancake)】帶去星光大道邊走邊吃看夜景！",
+              "🥧 尖沙咀甜點口袋名單：【拿破崙泡芙 Milkfill】、【紅茶冰室 Red Tea (Tsim Sha Tsui)】的蛋塔＋菠蘿油。"
+            ]
+          },
+          {
+            time: "晚上",
+            title: "搭乘天星小輪橫渡維港 ＆ 香港摩天輪",
+            mustGo: true,
+            transport: "⛴️ 天星小輪（尖沙咀 ➔ 中環）",
+            category: "景點",
+            desc: "從尖沙咀搭天星小輪前往中環，下船後到中環海濱摩天輪散步拍照，有機會偶遇「富豪雪糕車」！",
+            bullets: [
+              "⛴️ 乘船秘訣：推薦坐在「上層」靠近船頭的位置，視野與海風超棒，可直接刷八達通！"
+            ]
+          },
+          {
+            time: "夜間 (Opt.)",
+            title: "蘭桂坊小酌 ／ 夜遊大館、石板街 ＆ H2K 敞篷巴士體驗",
+            mustGo: false,
+            transport: "🚶 中環步行 / 🚌 H2K 敞篷巴士",
+            category: "夜生活",
+            desc: "視體力自由選擇中環夜間玩法：",
+            bullets: [
+              "🍸 去蘭桂坊感受氛圍：同事推薦特色酒吧【The Opposites】。",
+              "📸 若不想喝酒：走路去【大館 (Tai Kwun)】、【石板街 (Pottinger Street)】拍拍照體驗古蹟夜間氛圍。",
+              "🚌 回程隱藏玩法：可去中環碼頭搭【H2K 敞篷巴士 (HK City Sightseeing)】吹風看夜景回到住的地方（可直接刷八達通，單程票 HK$47）。"
+            ]
+          },
+          {
+            time: "宵夜",
+            title: "佳佳甜品 / 順和豆品 / 盛記粥麵（旺角店）",
+            mustGo: true,
+            transport: "🚇 地鐵回佐敦/油麻地/旺角",
+            category: "美食",
+            desc: "回飯店前的完美港式糖水與宵夜收尾：",
+            bullets: [
+              "🥣【佳佳甜品】：米其林推薦，必點芝麻糊＋湯圓、楊枝甘露。",
+              "🍮【順和豆品 (Shun He Dou Pin)】：豆花控必吃「薑汁＋糖豆腐花」！",
+              "🍲【盛記粥麵（旺角店）】：如果肚子還很餓，可以去吃碗熱呼呼的綿密廣東粥。"
+            ]
+          }
+        ]
+      },
+      2: {
+        dateTitle: "Day 2：11/8（星期日）",
+        themeTitle: "上環/中環 6 大蛋塔巡禮、太平山夕陽夜景 ＆ 轉住迪士尼",
+        summaryBadge: "住宿轉移：城景國際 ➔ 迪士尼好萊塢酒店",
+        items: [
+          {
+            time: "早上 (最晚12:00)",
+            title: "城景國際退房 ＆ 寄放行李在櫃台",
+            mustGo: false,
+            transport: "🏨 飯店櫃檯",
+            category: "住宿",
+            desc: "最晚 12:00 前辦理退房，將行李寄放在城景國際櫃台，晚上從旺角晃回來領取再搭地鐵去迪士尼。"
+          },
+          {
+            time: "早餐＆巡禮 1-2",
+            title: "蛋撻巡禮 ① Hashtag B ➔ 早餐「我杯茶 / 腸粉皇」➔ 蛋撻巡禮 ② Soft Thunder",
+            mustGo: true,
+            transport: "🚇 港鐵",
+            category: "蛋塔巡禮",
+            desc: "開啟熱量滿滿的港式奶茶與蛋撻巡禮上半場！",
+            bullets: [
+              "🥧 蛋撻巡禮 ①【Hashtag B】：招牌拿破崙焦糖千層塔（可順便買一些麵包當迪士尼早餐）。",
+              "☕ 早餐【我杯茶】：必點經典港式絲襪奶茶、雞蛋三文治（座位不多但翻桌率高）。",
+              "🥢 (Opt.) 傳統早餐【腸粉皇 Cheung Fun Wong】：就在附近，可吃混醬腸粉＋魚蛋＋燒賣！",
+              "🥧 蛋撻巡禮 ②【Soft Thunder】：超酥脆多層次千層蛋撻。"
+            ]
+          },
+          {
+            time: "上午",
+            title: "上環文武廟參拜拍照",
+            mustGo: false,
+            transport: "🚶 步行",
+            category: "景點",
+            desc: "走訪香港歷史最悠久的傳統古蹟廟宇，欣賞盤香高掛的獨特光影氛圍。"
+          },
+          {
+            time: "午餐",
+            title: "六安居（在地人共同推薦傳統推車港點！）",
+            mustGo: true,
+            transport: "🚶 步行",
+            category: "美食",
+            desc: "保留傳統手推車點心文化的懷舊茶樓！",
+            bullets: [
+              "🏃 搶位秘訣：要自己站在看起來快吃完要走的人旁邊，一離開趕快坐下（發揮通勤板南線搶位的能力）！",
+              "🥟 必點推薦：蝦餃、腸粉、燒賣、蘿蔔糕、腐皮卷、叉燒酥。"
+            ]
+          },
+          {
+            time: "下午",
+            title: "中環半山手扶梯、街區漫步 ＆ 蛋撻巡禮 ③ 泰昌、④ Santa Nata、⑤ Bakehouse、⑥ Vission",
+            mustGo: true,
+            transport: "🚶 步行 / 中環半山手扶梯",
+            category: "蛋塔巡禮",
+            desc: "搭半山手扶梯、逛石板街與中環街市，完成蛋撻巡禮下半場（註：蘭芳園週日公休，改週二下午去）：",
+            bullets: [
+              "📸 順遊景點：【中環半山手扶梯】、【石板街 (Pottinger Street)】拍照、【中環街市 (Central Market)】逛街。",
+              "🥧 蛋撻巡禮 ③【泰昌餅家 (Tai Cheong Bakery)】：經典牛油曲奇皮蛋撻，推薦加買「沙翁」！",
+              "🥧 蛋撻巡禮 ④ (Opt.)【Santa Nata】：正宗葡式蛋撻。",
+              "🥟 爆汁點心【祥興記上海生煎包 (Cheung Hing Kee)】：底部酥脆爆汁（有多家分店）。",
+              "🥧 蛋撻巡禮 ⑤【Bakehouse】：超人氣酸種千層蛋撻。",
+              "🥧 蛋撻巡禮 ⑥ (Opt.)【Vission Bakery】：偏貴但造型華麗的流心抹茶/創意甜點。",
+              "🏛️ (Opt.) 文創古蹟：【大館 (Tai Kwun)】白天可進去看舊監獄古蹟；【PMQ 元創方】文創市集（稍微反方向視時間決定）。"
+            ]
+          },
+          {
+            time: "16:30前抵達",
+            title: "太平山山頂纜車 ＋ 凌霄閣摩天觀景台（看 17:44 夕陽＆夜景）",
+            mustGo: true,
+            transport: "🚇 港鐵中環站 J2 出口步行 10 分鐘 ＋ 🚋 山頂纜車",
+            category: "景點",
+            desc: "16:30 前抵達纜車站，一次收集維港白日景緻、17:44 絕美夕陽與世界三大百萬夜景！",
+            bullets: [
+              "⛰️ 上山選位秘訣：盡量坐在「車頭第一排」，上山坐「靠右側」就能看到超漂亮維港風景！",
+              "🌅 香港日落時間：17:44。",
+              "📹 出發前必看即時影像：怕山頂有霧先看即時影像確認，門票當天在 KKday 或 Klook 買即可（180天內有效）。",
+              "📱 下山省時秘訣：下山排隊可能要 2 小時！務必用「排隊易」先抽電子號碼牌。"
+            ],
+            links: [
+              { label: "📹 太平山即時影像 (怕有霧先看)", url: "https://tw.live/cam/?id=HK_VPA" },
+              { label: "🎫 下山「排隊易」抽電子號碼牌", url: "https://thepeaktram.qbe.ee/equeue/m" }
+            ]
+          },
+          {
+            time: "晚餐",
+            title: "竺扶大班燒味 ＋ 候位順吃「C Dessert 薜記與李記燉奶」",
+            mustGo: true,
+            transport: "🚇 港鐵至灣仔",
+            category: "美食",
+            desc: "大啖黯然銷魂叉燒與燒味飯！候位小撇步：等候時間可以先去附近吃碗香滑順口的「C Dessert 薜記與李記」燉奶。"
+          },
+          {
+            time: "晚上",
+            title: "從旺角晃回城景國際拿行李 ＆ 囤積迪士尼物資",
+            mustGo: false,
+            transport: "⛴️ 可從灣仔碼頭搭天星小輪 / 🚇 地鐵至旺角",
+            category: "採買",
+            desc: "可從灣仔碼頭搭天星小輪回九龍，沿途體驗香港夜生活繁忙感（想拍照可找旺角行人天橋），並囤積物資：",
+            bullets: [
+              "🥐 囤積兩天份早餐麵包：推薦【Kadorar et Levain】或【Hashtag B（旺角店）】。",
+              "🍜 囤積週一晚餐物資：去超市買香港厲害泡麵「炒麵王」！"
+            ]
+          },
+          {
+            time: "深夜",
+            title: "搬行李搭地鐵到香港迪士尼 ➔ 入住迪士尼好萊塢酒店",
+            mustGo: false,
+            transport: "🚇 港鐵至「香港迪士尼站」＋ 🚌 免費穿梭巴士",
+            category: "住宿",
+            desc: "回城景國際領取行李，搭港鐵到「香港迪士尼」站轉乘免費穿梭巴士入住迪士尼好萊塢酒店！（Check-in 時記得先向櫃檯確認隔天手工藝創作時刻表）"
+          }
+        ]
+      },
+      3: {
+        dateTitle: "Day 3：11/9（星期一）",
+        themeTitle: "香港迪士尼樂園・全日奇幻全攻略",
+        summaryBadge: "住宿：迪士尼好萊塢酒店（續住）",
+        items: [
+          {
+            time: "09:30",
+            title: "持「提早入園證」搶先入場（一般開園 10:30 - 20:00）",
+            mustGo: true,
+            transport: "🚌 飯店免費穿梭巴士",
+            category: "迪士尼",
+            desc: "09:30 提早 1 小時入園！剛入園右手邊 City Hall 先領「第一次來迪士尼」徽章，並趁早上順光先在奇妙夢想城堡前拍美照（下午會大逆光）！記得帶環保水瓶（廁所旁都有飲水機）。"
+          },
+          {
+            time: "上午主攻",
+            title: "三大園區：魔雪奇緣世界 ➔ 幻想世界 ➔ 明日世界",
+            mustGo: true,
+            transport: "🚶 園區步行",
+            category: "迪士尼",
+            desc: "趁早場人潮最少，一舉攻略最熱門設施：",
+            bullets: [
+              "❄️ 魔雪奇緣世界：【魔雪奇幻之旅】（必玩！支援提早入園）、【雪嶺滑雪橇】（支援提早入園，較短免排隊可玩）。",
+              "🚀 明日世界：【星戰極速穿梭】（超刺激室內暗黑過山車，支援 Single Rider）、【鐵甲奇俠飛行之旅】（3D 模擬飛行）、【蟻俠與黃蜂女：擊戰特攻！】（互動射擊）。",
+              "🎠 幻想世界：小熊維尼歷險之旅、小飛象旋轉世界、灰姑娘旋轉木馬（皆支援提早入園）。"
+            ]
+          },
+          {
+            time: "12:00",
+            title: "前往幻想世界排隊卡位 ➔ 12:30 - 13:00《魔法書房》表演",
+            mustGo: true,
+            transport: "🎭 幻想世界・迪士尼故事劇場",
+            category: "表演",
+            desc: "必看王牌音樂劇！建議開演前 30–40 分鐘（約 12:00）去排隊拿好位置（當日場次：12:30、13:45、16:30、18:15）。"
+          },
+          {
+            time: "下午主攻",
+            title: "五大園區：美國小鎮大街、探險世界、灰熊山谷、迷離莊園、反斗奇兵大本營",
+            mustGo: true,
+            transport: "🚶 園區步行",
+            category: "迪士尼",
+            desc: "下午順時針把刺激設施與經典劇場全部收集完畢：",
+            bullets: [
+              "🐻 灰熊山谷：【灰熊山極速礦車】（全園最推必玩！驚險刺激的戶外過山車，支援 Single Rider 單人通道）。",
+              "🎩 迷離莊園：【迷離大宅】（港迪獨有必玩！無軌道電磁車廂，視覺特效滿分）。",
+              "🌴 探險世界：【森林河流之旅】（導覽員超有趣）、必看劇場【獅子王慶典】（記得往左邊坐！）、【魔海奇緣凱旋慶典】（12:30 / 14:30 / 16:30 / 18:00，20分鐘）。",
+              "🦖 反斗奇兵大本營：【玩具兵團跳降傘】（雖然不敢玩但有單人通道 Single Rider）、沖天遙控車、轉轉彈弓狗。"
+            ]
+          },
+          {
+            time: "15:15 - 16:00",
+            title: "15:15 美國小鎮大街卡位 ➔ 15:30 - 16:00《迪士尼好友巡遊派對》",
+            mustGo: true,
+            transport: "🚶 美國小鎮大街",
+            category: "遊行",
+            desc: "15:15 先到大街卡位，15:30 欣賞熱鬧繽紛的日間花車大遊行！順便買支必吃的「北海道 5.0 牛乳配白桃味雪糕」。"
+          },
+          {
+            time: "傍晚＆晚餐",
+            title: "兌換官網購票小禮物 ＆ 美國大街咖啡廳（大街餐廳）",
+            mustGo: false,
+            transport: "🍴 美國小鎮大街",
+            category: "美食",
+            desc: "憑官網購票證明至「廣場時尚店」或「安仔玩具箱」換小禮物（若遇到園內問卷調查回答也有小禮物）；晚餐若在園內吃推薦去「美國大街咖啡廳」，無低消限制且好吃！"
+          },
+          {
+            time: "20:00",
+            title: "壓軸《星夢光影之旅》夜間城堡煙火秀 ➔ 回飯店洗澡睡覺",
+            mustGo: true,
+            transport: "🎆 廣場中央 ➔ 🚌 飯店穿梭巴士",
+            category: "表演",
+            desc: "鎖定「廣場中央」最佳免費觀賞位置欣賞 20 分鐘立體光雕煙火秀！看完煙火搭穿梭巴士回迪士尼好萊塢酒店吃炒麵王宵夜、洗澡睡覺。"
+          }
+        ]
+      },
+      4: {
+        dateTitle: "Day 4：11/10（星期二）",
+        themeTitle: "迪士尼飯店體驗、灣仔甘牌燒鵝、蘭芳園 ＆ 買蛋塔返台",
+        summaryBadge: "18:40 班機返台（20:25 抵桃機 T1）",
+        items: [
+          {
+            time: "10:00 - 11:00",
+            title: "迪士尼好萊塢酒店體驗：自助腳踏高卡車 ＆ 手工藝創作（最晚 11:00 退房）",
+            mustGo: true,
+            transport: "🏨 迪士尼好萊塢酒店",
+            category: "飯店活動",
+            desc: "參觀飯店、體驗自助腳踏高卡車與迪士尼手工藝創作（三間飯店皆可玩）。",
+            bullets: [
+              "💡 彈性時間筆記：若怕甘牌燒鵝午餐排太久，也可提早退房出發去排隊；或者若內用排太久可外帶去附近公園吃（約 15 分鐘內），就能在飯店多待一點！"
+            ]
+          },
+          {
+            time: "13:30前 (退房時)",
+            title: "飯店櫃台辦理「行李直送香港機場」服務",
+            mustGo: true,
+            transport: "🧳 飯店櫃台 ➔ 機場 T1 接機大堂 A",
+            category: "住宿",
+            desc: "退房時將行李交給飯店櫃台寄送機場（須於 13:30 前辦理），最晚 16:00 會送達機場！",
+            bullets: [
+              "📍 機場領取地點（超重要）：香港國際機場「一號客運大樓抵港層（L5）接機大堂 A（非禁區）— 行李寄存及送遞服務櫃檯」。"
+            ]
+          },
+          {
+            time: "11:00 - 12:00",
+            title: "搭乘港鐵移動前往灣仔",
+            mustGo: false,
+            transport: "🚌 穿梭巴士 ＋ 🚇 港鐵至灣仔站 A4 出口",
+            category: "交通",
+            desc: "雙手空空輕鬆搭港鐵前往港島灣仔站。"
+          },
+          {
+            time: "午餐",
+            title: "甘牌燒鵝（必吃平日划算午間套餐！）",
+            mustGo: true,
+            transport: "🚶 灣仔站 A4 出口步行",
+            category: "美食",
+            desc: "在地人共同推薦的米其林一星化皮燒鵝！",
+            bullets: [
+              "💰 午間套餐攻略：平日中午（11:30–14:00）有划算的午間套餐，價格優惠又能吃到不同口味的燒味！",
+              "🥡 排隊備案：如果內用排隊人潮太多，可以直接外帶去附近公園吃（約 15 分鐘內搞定）。"
+            ]
+          },
+          {
+            time: "下午茶",
+            title: "蘭芳園（中環總店・外帶招牌絲襪奶茶）",
+            mustGo: true,
+            transport: "🚇 港鐵 / 叮叮車至中環",
+            category: "美食",
+            desc: "絲襪奶茶始祖！特別注意：總店「只收現金」！不用特別排隊內用，直接外帶一杯冰鎮絲襪奶茶即可。"
+          },
+          {
+            time: "伴手禮＆外帶",
+            title: "買蛋塔伴手禮回台灣 ＆ 外帶一餐去機場吃",
+            mustGo: true,
+            transport: "🚶 中環 / 灣仔採買",
+            category: "蛋塔巡禮",
+            desc: "綜合 Day 2 試吃評比結果，決定買哪家蛋塔回台灣！",
+            bullets: [
+              "🍱 省錢小撇步：去機場前建議在市區再外帶一餐帶去機場吃，不然機場餐廳更貴！"
+            ]
+          },
+          {
+            time: "16:40 - 20:25",
+            title: "16:40 抵達香港機場領行李 ➔ 18:40 香港 T2 起飛 ➔ 20:25 抵達桃園 T1",
+            mustGo: false,
+            transport: "🚆 機場快線 / ✈️ 返台班機",
+            category: "航班",
+            desc: "16:40 抵達香港機場，先去 T1 抵港層（L5）接機大堂 A 領取飯店寄送的行李，再前往辦理登機。18:40 起飛回家啦啦（隔天上班嗚嗚 QQ）！"
+          }
+        ]
+      }
+    };
+
+    // =========================================================================
+    // 2. 迪士尼園區 28 項設施＆娛樂完整資料 (對應試算表第 2、3 分頁)
+    // =========================================================================
+    const disneyRides = [
+      // 魔雪奇緣世界 (2項)
+      { name: "魔雪奇幻之旅", land: "魔雪奇緣世界", thrill: "低", rec: "高", type: "室內船遊", early: true, single: false, must: true, closed: false, note: "必玩推薦！支援提早入園，搭乘木船進入艾莎冰雪皇宮，聲光超美" },
+      { name: "雪嶺滑雪橇", land: "魔雪奇緣世界", thrill: "中", rec: "中", type: "室外過山車", early: true, single: false, must: true, closed: false, note: "支援提早入園！車程較短，趁早場免排隊時很值得玩" },
+
+      // 明日世界 (5項)
+      { name: "星戰極速穿梭", land: "明日世界", thrill: "高", rec: "高", type: "室內暗黑過山車", early: false, single: true, must: true, closed: false, note: "必玩！超刺激星際大戰主題室內過山車，支援 Single Rider 單人通道" },
+      { name: "鐵甲奇俠飛行之旅", land: "明日世界", thrill: "中", rec: "高", type: "室內 3D 模擬飛行", early: false, single: false, must: true, closed: false, note: "必玩！戴上 3D 眼鏡與鋼鐵人一起飛越香港中環與維港街道" },
+      { name: "蟻俠與黃蜂女：擊戰特攻！", land: "明日世界", thrill: "低", rec: "中", type: "室內互動射擊", early: false, single: false, must: true, closed: false, note: "必玩！搭車拿電磁脈衝槍射擊機械蟲比拼分數" },
+      { name: "鐵甲奇俠裝備展", land: "明日世界", thrill: "低", rec: "低", type: "互動角色見面會", early: false, single: false, must: false, closed: false, note: "展示鋼鐵人歷代裝甲，可與鋼鐵人合照互動" },
+      { name: "太空飛碟", land: "明日世界", thrill: "低", rec: "低", type: "戶外旋轉飛碟", early: false, single: false, must: false, closed: true, note: "⚠️ 試算表標註：目前暫停開放" },
+
+      // 灰熊山谷 (2項 - 嚴格遵守不爆雷原則)
+      { name: "灰熊山極速礦車", land: "灰熊山谷", thrill: "高", rec: "高", type: "室外高速礦車", early: false, single: true, must: true, closed: false, note: "全園最推必玩！穿梭西部山谷的驚險刺激戶外過山車，支援 Single Rider 單人通道" },
+      { name: "噴泉山谷", land: "灰熊山谷", thrill: "低", rec: "低", type: "戶外親水拍照區", early: false, single: false, must: false, closed: false, note: "西部小鎮間歇泉景觀，適合路過拍照打卡" },
+
+      // 迷離莊園 (2項)
+      { name: "迷離大宅", land: "迷離莊園", thrill: "低", rec: "高", type: "室內無軌電磁車", early: false, single: false, must: true, closed: false, note: "港迪獨有必玩！無軌道電磁車廂搭配超強投影視覺特效，完全不恐怖超好玩" },
+      { name: "奇幻庭園", land: "迷離莊園", thrill: "低", rec: "低", type: "戶外 3D 錯視拍照區", early: false, single: false, must: false, closed: false, note: "亨利爵士收集的異國雕塑庭園，可拍趣味錯視照" },
+
+      // 反斗奇兵大本營 (4項)
+      { name: "玩具兵團跳降傘", land: "反斗奇兵大本營", thrill: "中", rec: "中", type: "垂直升降傘塔", early: false, single: true, must: true, closed: false, note: "必玩清單！雖然有點可怕但風景很好，支援 Single Rider 單人通道排隊超快" },
+      { name: "沖天遙控車", land: "反斗奇兵大本營", thrill: "高", rec: "中", type: "U 型軌道極速飛車", early: false, single: false, must: false, closed: false, note: "園區高刺激度項目，27 公尺高 U 型軌道前後高速衝刺" },
+      { name: "轉轉彈弓狗", land: "反斗奇兵大本營", thrill: "低", rec: "低", type: "戶外旋轉車", early: false, single: false, must: false, closed: false, note: "可愛輕鬆的彈簧狗追尾巴轉圈圈" },
+      { name: "歡樂桶", land: "反斗奇兵大本營", thrill: "低", rec: "低", type: "拍照打卡與見面會", early: false, single: false, must: false, closed: false, note: "胡迪、翠絲與巴斯光年角色見面拍照點" },
+
+      // 探險世界 (5項)
+      { name: "森林河流之旅", land: "探險世界", thrill: "低", rec: "高", type: "戶外導覽遊船", early: false, single: false, must: true, closed: false, note: "必玩！分國語/粵語/英語排隊通道，船長導覽生動幽默，傍晚氣氛也很棒" },
+      { name: "獅子王慶典", land: "探險世界", thrill: "低", rec: "高", type: "百老匯級圓形劇場", early: false, single: false, must: true, closed: false, note: "必看三大秀之一（30分鐘）！進場選位記得「往左邊坐」視角與互動最佳" },
+      { name: "魔海奇緣凱旋慶典", land: "探險世界", thrill: "低", rec: "中", type: "半戶外互動劇場", early: false, single: false, must: false, closed: false, note: "莫娜主題劇場（20分鐘），場次：12:30 / 14:30 / 16:30 / 18:00" },
+      { name: "泰山樹屋", land: "探險世界", thrill: "低", rec: "低", type: "戶外步行景點", early: false, single: false, must: false, closed: true, note: "⚠️ 試算表標註：目前暫停開放" },
+      { name: "前往泰山樹屋之木筏", land: "探險世界", thrill: "低", rec: "低", type: "渡河木筏", early: false, single: false, must: false, closed: true, note: "⚠️ 試算表標註：目前暫停開放" },
+
+      // 幻想世界 (7項)
+      { name: "魔法書房 (迪士尼故事劇場)", land: "幻想世界", thrill: "低", rec: "高", type: "王牌室內音樂劇", early: false, single: false, must: true, closed: false, note: "必看三大秀之一！鎖定 12:30 場次（12:00 先去排隊卡位），另有 13:45 / 16:30 / 18:15" },
+      { name: "小熊維尼歷險之旅", land: "幻想世界", thrill: "低", rec: "中", type: "室內蜜罐車", early: true, single: false, must: false, closed: false, note: "支援提早入園！一般時段排隊較久，早場順路可玩" },
+      { name: "小飛象旋轉世界", land: "幻想世界", thrill: "低", rec: "低", type: "戶外空中旋轉", early: true, single: false, must: false, closed: false, note: "支援提早入園，經典迪士尼飛天小飛象" },
+      { name: "灰姑娘旋轉木馬", land: "幻想世界", thrill: "低", rec: "低", type: "旋轉木馬", early: true, single: false, must: false, closed: false, note: "支援提早入園，城堡後方浪漫打卡點" },
+      { name: "米奇幻想曲", land: "幻想世界", thrill: "低", rec: "中", type: "室內 3D 交響樂劇院", early: false, single: false, must: false, closed: false, note: "冷氣超涼休息好去處！唐老鴨穿梭經典動畫，有噴水與香氣特效" },
+      { name: "小小世界", land: "幻想世界", thrill: "低", rec: "中", type: "室內音樂遊船", early: false, single: false, must: false, closed: false, note: "排隊快、冷氣涼，乘船欣賞世界各國玩偶合唱" },
+      { name: "瘋帽子旋轉杯", land: "幻想世界", thrill: "中", rec: "低", type: "戶外旋轉咖啡杯", early: false, single: false, must: false, closed: false, note: "愛麗絲夢遊仙境主題色彩繽紛咖啡杯" },
+
+      // 美國小鎮大街 (1項)
+      { name: "香港迪士尼樂園鐵路－小鎮大街火車站", land: "美國小鎮大街", thrill: "低", rec: "低", type: "環園蒸汽火車", early: false, single: false, must: false, closed: true, note: "⚠️ 試算表標註：目前暫停開放（火車站二樓平台可看夜景煙火全景）" }
+    ];
+
+    // =========================================================================
+    // 3. 6 大蛋塔巡禮 ＆ 口袋美食地圖資料 (完整同步試算表)
+    // =========================================================================
+    const eggTartsData = [
+      { id: "hashtagb", order: "巡禮 ①", name: "Hashtag B", style: "拿破崙焦糖千層花朵塔", note: "Day 2 第一站＆旺角皆有店，可順便買麵包當迪士尼早餐！" },
+      { id: "softthunder", order: "巡禮 ②", name: "Soft Thunder", style: "超酥脆法式可頌千層蛋撻", note: "Day 2 吃完我杯茶順路吃，酥皮層次感超豐富！" },
+      { id: "taicheong", order: "巡禮 ③", name: "泰昌餅家", style: "傳統港式牛油曲奇皮＋沙翁", note: "中環老字號，滑嫩蛋漿配曲奇皮，推薦加買一顆「沙翁」！" },
+      { id: "santanata", order: "巡禮 ④ (Opt.)", name: "Santa Nata", style: "正宗葡萄牙直送葡式蛋撻", note: "中環擺花街上，專賣正宗酥脆焦香葡式蛋撻！" },
+      { id: "bakehouse", order: "巡禮 ⑤", name: "Bakehouse", style: "名廚酸種麵團千層葡式蛋撻", note: "香港超人氣排隊王，冷吃熱吃都超香，伴手禮大熱門！" },
+      { id: "vission", order: "巡禮 ⑥ (Opt.)", name: "Vission Bakery", style: "超厚流心抹茶/開心果創意塔", note: "中環半山手扶梯旁，單價偏貴但視覺味覺超浮誇，視胃容量選吃！" }
+    ];
+
+    const restaurantsData = [
+      {
+        name: "甘牌燒鵝 (Kam's Roast Goose)",
+        tag: "★ 在地人共同推薦｜Day 4 午餐",
+        color: "bg-coral",
+        desc: "米其林一星化皮燒鵝！平日中午 11:30–14:00 有超划算「午間套餐」，若內用排太久可外帶去附近公園吃。",
+        mapUrl: "https://maps.app.goo.gl/g7rp8Ug1iucWbJkLA?g_st=ic"
+      },
+      {
+        name: "六安居 (Luk On Kui)",
+        tag: "★ 在地人共同推薦｜Day 2 午餐",
+        color: "bg-yamabuki",
+        desc: "上環傳統手推車港點！記得站在快吃完的人旁邊搶位，必點：蝦餃、腸粉、燒賣、蘿蔔糕、腐皮卷、叉燒酥。",
+        mapUrl: "https://maps.app.goo.gl/5uECYsELm7Q3Ymws5?g_st=ic"
+      },
+      {
+        name: "竺扶大班燒味",
+        tag: "★ 必吃燒臘｜Day 2 晚餐",
+        color: "bg-coral",
+        desc: "灣仔黯然銷魂叉燒與燒味飯，候位時可先去附近吃「C Dessert 薜記與李記」燉奶！",
+        mapUrl: "https://maps.app.goo.gl/K3DT43cTbVWiH2C89?g_st=ic"
+      },
+      {
+        name: "我杯茶 (My Cup of Tea)",
+        tag: "★ 必喝奶茶｜Day 2 早餐",
+        color: "bg-mizu",
+        desc: "必點冠軍級絲襪奶茶、雞蛋三文治！附近還有傳統早餐「腸粉皇」（腸粉＋魚蛋＋燒賣）。",
+        mapUrl: "https://maps.app.goo.gl/yFpk5TjAoyhGdgUF8?g_st=ipc"
+      },
+      {
+        name: "嚐囍煲仔小菜",
+        tag: "煲仔飯口袋名單",
+        color: "bg-wakatake",
+        desc: "米其林必比登推介炭火煲仔飯，鍋巴焦香迷人。",
+        mapUrl: "https://maps.app.goo.gl/twGT8sx8QTja587SA?g_st=ic"
+      },
+      {
+        name: "蓮香樓 ＆ 龍點心",
+        tag: "港點口袋雙備案",
+        color: "bg-wakatake",
+        desc: "傳統推車港點「蓮香樓」與新派精緻港點「龍點心」雙備案。",
+        mapUrl: "https://maps.app.goo.gl/vJpyeDKZYi2k48QLA?g_st=ic",
+        secondMapUrl: "https://maps.app.goo.gl/bkjjud4af3JDE1Gu5?g_st=ic"
+      },
+      {
+        name: "祥興記上海生煎包",
+        tag: "★ 爆汁點心｜Day 2 點心",
+        color: "bg-yamabuki",
+        desc: "底部煎得金黃酥脆、咬開滿滿鮮甜肉汁的上海生煎包（中環、尖沙咀、灣仔皆有分店）。",
+        mapUrl: "https://www.google.com/maps/search/?api=1&query=祥興記上海生煎包+香港"
+      }
+    ];
+
+    // =========================================================================
+    // 4. 預設行前確認清單資料 (同步試算表 🐑 & 🍉 最新 10 項確認表)
+    // =========================================================================
+    const defaultChecklist = [
+      { id: "todo-1", text: "💰 港幣現金準備：🐑 HK$2,000、🍉 HK$2,000（蘭芳園總店只收現金！）", done: false },
+      { id: "todo-2", text: "🛡️ 旅平險投保確認：🐑 ＆ 🍉 旅遊平安險＋不便險", done: false },
+      { id: "todo-3", text: "📱 e-SIM 網卡準備：🐑 ＆ 🍉 購買與安裝確認", done: false },
+      { id: "todo-4", text: "💳 八達通＿教學確認：🐑 Apple Pay 手機八達通 / 旅客八達通儲值確認", done: false },
+      { id: "todo-5", text: "📄 港簽（實體列印）：🐑 ＆ 🍉 台灣居民預辦入境登記（務必印出實體紙本！）", done: false },
+      { id: "todo-6", text: "🎫 門票預訂：太平山山頂纜車套票、香港迪士尼樂園門票（含 09:30 提早入園證）", done: false },
+      { id: "todo-7", text: "🧳 訂購行李寄送：🍉 ＆ 🐑 預訂迪士尼好萊塢酒店 ➔ 香港機場 T1 接機大堂 A 送遞服務", done: false },
+      { id: "todo-8", text: "🚆 訂購機場快線車票：🐑 ＆ 🍉 先在 Klook 購買香港站來回/單程優惠票", done: false },
+      { id: "todo-9", text: "🧻 隨身紙巾（帶一堆袖珍包面紙！）：香港餐廳通常不提供免費紙巾", done: false },
+      { id: "todo-10", text: "💧 環保水瓶：去香港迪士尼必備，園區每個廁所旁邊都有飲水機可以裝水", done: false }
+    ];
+
+    // =========================================================================
+    // 5. 初始化與邏輯函式
+    // =========================================================================
+    function updateHeaderOffset() {
+      const headerEl = document.querySelector("header");
+      if (!headerEl) return;
+      const offset = headerEl.offsetHeight + 24;
+      document.documentElement.style.setProperty("--header-offset", `${offset}px`);
+    }
+
+    function scrollToElementWithHeaderOffset(targetEl) {
+      if (!targetEl) return;
+      const headerEl = document.querySelector("header");
+      const headerHeight = headerEl ? headerEl.offsetHeight : 72;
+      const isReducedMotion =
+        document.body.classList.contains("reduce-motion") ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // 若目標是首頁 #hero，捲動至頂部 (0) 或扣除導覽列高度的位置，讓首頁卡片完整顯示在導覽列下方
+      if (targetEl.id === "hero") {
+        const heroTop = targetEl.getBoundingClientRect().top + window.scrollY - (headerHeight + 16);
+        window.scrollTo({
+          top: Math.max(0, heroTop),
+          behavior: isReducedMotion ? "auto" : "smooth"
+        });
+        return;
+      }
+
+      const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - (headerHeight + 20);
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: isReducedMotion ? "auto" : "smooth"
+      });
+    }
+
+    function initSmoothAnchorLinks() {
+      updateHeaderOffset();
+      window.addEventListener("resize", updateHeaderOffset);
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", (e) => {
+          const href = anchor.getAttribute("href");
+          if (!href || href === "#") return;
+          const targetEl = document.querySelector(href);
+          if (!targetEl) return;
+
+          e.preventDefault();
+
+          // 若手機版折疊選單開啟中，先收合選單再重新計算導覽列高度
+          const mobileMenu = document.getElementById("mobileMenu");
+          if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.add("hidden");
+          }
+
+          updateHeaderOffset();
+          scrollToElementWithHeaderOffset(targetEl);
+          history.pushState(null, "", href);
+        });
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initMobileMenu();
+      initSmoothAnchorLinks();
+      initReducedMotionToggle();
+      initCountdown();
+      initItineraryTabs();
+      initDisneyRidesFilter();
+      initEggTartsAndRestaurants();
+      initChecklist();
+    });
+
+    // --- 手機版導覽選單 ---
+    function initMobileMenu() {
+      const btn = document.getElementById("mobileMenuBtn");
+      const menu = document.getElementById("mobileMenu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        updateHeaderOffset();
+      });
+      document.querySelectorAll(".mobile-nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
+          updateHeaderOffset();
+        });
+      });
+    }
+
+    // --- 減少動態效果切換 (支援系統設定 + 手動開關) ---
+    function initReducedMotionToggle() {
+      const btn = document.getElementById("motionToggleBtn");
+      const icon = document.getElementById("motionIcon");
+      const text = document.getElementById("motionText");
+
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const savedMotion = localStorage.getItem("hk2026_reduce_motion");
+      let isReduced = savedMotion !== null ? savedMotion === "true" : prefersReduced;
+
+      function applyMotionState() {
+        if (isReduced) {
+          document.body.classList.add("reduce-motion");
+          btn.setAttribute("aria-pressed", "true");
+          icon.className = "inline-block w-3 h-3 rounded-full bg-coral border-2 border-ink";
+          text.textContent = "減少動態：開啟";
+        } else {
+          document.body.classList.remove("reduce-motion");
+          btn.setAttribute("aria-pressed", "false");
+          icon.className = "inline-block w-3 h-3 rounded-full bg-wakatake border-2 border-ink";
+          text.textContent = "動態：開啟";
+        }
+      }
+
+      applyMotionState();
+
+      btn.addEventListener("click", () => {
+        isReduced = !isReduced;
+        localStorage.setItem("hk2026_reduce_motion", String(isReduced));
+        applyMotionState();
+      });
+    }
+
+    // --- 出發倒數計時器 (目標：2026-11-07T13:55:00+08:00) ---
+    function initCountdown() {
+      const targetDate = new Date("2026-11-07T13:55:00+08:00").getTime();
+      const endDate = new Date("2026-11-10T20:25:00+08:00").getTime();
+
+      const elDays = document.getElementById("cd-days");
+      const elHours = document.getElementById("cd-hours");
+      const elMins = document.getElementById("cd-mins");
+      const elSecs = document.getElementById("cd-secs");
+      const elBadge = document.getElementById("countdownStatusBadge");
+      const elMsg = document.getElementById("countdownMessage");
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+          elDays.textContent = "00";
+          elHours.textContent = "00";
+          elMins.textContent = "00";
+          elSecs.textContent = "00";
+          elMsg.classList.remove("hidden");
+          if (now <= endDate) {
+            elBadge.textContent = "🎉 旅途進行中！";
+            elBadge.className = "ehon-badge bg-coral text-xs px-2.5 py-0.5";
+          } else {
+            elBadge.textContent = "✨ 美好回憶珍藏";
+            elMsg.textContent = "✨ 2026 香港蛋塔＆迪士尼之旅圓滿完成！";
+          }
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        elDays.textContent = String(days).padStart(2, "0");
+        elHours.textContent = String(hours).padStart(2, "0");
+        elMins.textContent = String(mins).padStart(2, "0");
+        elSecs.textContent = String(secs).padStart(2, "0");
+      }
+
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    }
+
+    // --- 每日行程切換 Tabs 與彈跳時間軸渲染 ---
+    function initItineraryTabs() {
+      const tabs = document.querySelectorAll(".day-tab");
+      const container = document.getElementById("timelineContainer");
+
+      function renderDay(dayNum) {
+        const data = itineraryData[dayNum];
+        if (!data) return;
+
+        // 移除再重加 class 以觸發 spring-enter 彈跳動畫
+        container.classList.remove("spring-enter");
+        void container.offsetWidth;
+        container.classList.add("spring-enter");
+
+        const itemsHtml = data.items.map((item, idx) => {
+          const mustBadge = item.mustGo
+            ? `<span class="ehon-badge bg-coral px-3 py-0.5 text-xs">★ 必去</span>`
+            : "";
+
+          const bulletsHtml = item.bullets && item.bullets.length
+            ? `<ul class="mt-2.5 space-y-1.5 bg-washi p-3 rounded-xl border-2 border-ink text-xs sm:text-sm font-bold">
+                ${item.bullets.map(b => `<li class="flex items-start gap-2"><span class="text-ink">•</span><span>${b}</span></li>`).join("")}
+               </ul>`
+            : "";
+
+          const linksHtml = item.links && item.links.length
+            ? `<div class="mt-3 flex flex-wrap gap-2">
+                ${item.links.map(l => `
+                  <a href="${l.url}" target="_blank" rel="noopener noreferrer"
+                     class="ehon-btn bg-yamabuki px-3 py-1.5 text-xs font-black inline-flex items-center gap-1">
+                    <span>${l.label}</span>
+                    <span>↗</span>
+                  </a>
+                `).join("")}
+               </div>`
+            : "";
+
+          // 根據類型選擇節點圓圈背景色
+          let dotBg = "bg-yamabuki";
+          if (item.mustGo) dotBg = "bg-coral";
+          else if (item.category === "交通" || item.category === "航班") dotBg = "bg-mizu";
+          else if (item.category === "住宿" || item.category === "採買") dotBg = "bg-wakatake";
+
+          return `
+            <div class="relative pl-12 md:pl-16 pb-6 last:pb-0">
+              <!-- 時間軸節點圓圈 -->
+              <div class="absolute left-2 md:left-4 top-1 w-8 h-8 rounded-full ${dotBg} border-[3px] border-ink flex items-center justify-center font-black text-xs z-10 shadow-[2px_2px_0px_#3E3A39]">
+                ${idx + 1}
+              </div>
+
+              <!-- 行程卡片 -->
+              <div class="ehon-card ehon-card-hover bg-white p-4 sm:p-5">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="px-3 py-0.5 rounded-lg bg-yamabuki border-2 border-ink font-black text-xs sm:text-sm">${item.time}</span>
+                    ${mustBadge}
+                  </div>
+                  <span class="ehon-badge bg-mizu px-3 py-0.5 text-xs">${item.transport}</span>
+                </div>
+
+                <h4 class="text-lg sm:text-xl font-black mb-1.5">${item.title}</h4>
+                <p class="text-sm sm:text-base font-bold opacity-90 leading-relaxed">${item.desc}</p>
+                ${bulletsHtml}
+                ${linksHtml}
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        container.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 mb-6 border-b-[3px] border-ink">
+            <div>
+              <span class="text-xs sm:text-sm font-black bg-yamabuki px-3 py-0.5 rounded-full border-2 border-ink">${data.dateTitle}</span>
+              <h3 class="text-xl sm:text-2xl font-black mt-1.5">${data.themeTitle}</h3>
+            </div>
+            <div class="ehon-badge bg-wakatake px-3.5 py-1.5 text-xs sm:text-sm self-start sm:self-auto">
+              🏨 ${data.summaryBadge}
+            </div>
+          </div>
+
+          <div class="relative timeline-line">
+            ${itemsHtml}
+          </div>
+        `;
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          const day = tab.getAttribute("data-day");
+          tabs.forEach(t => {
+            t.setAttribute("aria-selected", "false");
+            t.classList.remove("bg-yamabuki");
+            t.classList.add("bg-white");
+          });
+          tab.setAttribute("aria-selected", "true");
+          tab.classList.remove("bg-white");
+          tab.classList.add("bg-yamabuki");
+          renderDay(day);
+        });
+      });
+
+      // 預設顯示 Day 1
+      renderDay(1);
+    }
+
+    // --- 迪士尼園區設施篩選器 (整合繪本地圖點擊連動) ---
+    function initDisneyRidesFilter() {
+      const buttons = document.querySelectorAll(".disney-filter-btn");
+      const filterSection = document.getElementById("disney-attractions-filter");
+      const grid = document.getElementById("disneyRidesGrid");
+      const mapZones = document.querySelectorAll(".map-zone");
+      const mapStatus = document.getElementById("mapSelectedStatus");
+      const resetMapBtn = document.getElementById("resetMapFilterBtn");
+
+      // 將「迪士尼園區設施互動篩選器」區塊平滑捲動並對齊至畫面上方（預留頂端固定導覽列高度）
+      function scrollToFilterSectionTop() {
+        const targetEl = filterSection || grid;
+        scrollToElementWithHeaderOffset(targetEl);
+      }
+
+      function renderRides(filterType, landName = null) {
+        const filtered = disneyRides.filter(r => {
+          if (landName && landName !== "all") {
+            return r.land === landName;
+          }
+          if (filterType === "must") return r.must && !r.closed;
+          if (filterType === "early") return r.early && !r.closed;
+          if (filterType === "single") return r.single && !r.closed;
+          if (filterType === "closed") return r.closed;
+          return true; // all
+        });
+
+        grid.innerHTML = filtered.map(r => {
+          let thrillBadgeColor = "bg-wakatake";
+          if (r.thrill === "高") thrillBadgeColor = "bg-coral";
+          else if (r.thrill === "中") thrillBadgeColor = "bg-yamabuki";
+
+          let recBadgeColor = "bg-washi";
+          if (r.rec === "高") recBadgeColor = "bg-yamabuki";
+          else if (r.rec === "中") recBadgeColor = "bg-wakatake";
+
+          const cardBg = r.closed ? "bg-washi opacity-80" : "bg-white";
+
+          return `
+            <div class="ehon-box-sm ${cardBg} p-4 flex flex-col justify-between gap-2">
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-1 mb-2">
+                  <span class="text-xs font-black px-2.5 py-0.5 rounded-md bg-mizu border-2 border-ink">${r.land}</span>
+                  <div class="flex items-center gap-1">
+                    <span class="text-xs font-black px-2 py-0.5 rounded-md ${thrillBadgeColor} border-2 border-ink">可怕度：${r.thrill}</span>
+                    <span class="text-xs font-black px-2 py-0.5 rounded-md ${recBadgeColor} border-2 border-ink">推薦：${r.rec}</span>
+                  </div>
+                </div>
+                <h4 class="font-black text-base sm:text-lg mb-1">${r.name}</h4>
+                <p class="text-xs font-bold opacity-85 mb-2">類型：${r.type}</p>
+                <p class="text-xs sm:text-sm font-bold bg-cream p-2 rounded-lg border-2 border-ink">${r.note}</p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                ${r.must ? `<span class="ehon-badge bg-coral px-2.5 py-0.5 text-xs">★ 必玩推薦</span>` : ""}
+                ${r.early ? `<span class="ehon-badge bg-yamabuki px-2.5 py-0.5 text-xs">🌅 提早入園</span>` : ""}
+                ${r.single ? `<span class="ehon-badge bg-wakatake px-2.5 py-0.5 text-xs">⚡ Single Ride</span>` : ""}
+                ${r.closed ? `<span class="ehon-badge bg-white px-2.5 py-0.5 text-xs">🚧 暫停開放</span>` : ""}
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
+          buttons.forEach(b => {
+            b.classList.remove("bg-coral", "font-black");
+            b.classList.add("bg-white", "font-bold");
+          });
+          btn.classList.remove("bg-white", "font-bold");
+          btn.classList.add("bg-coral", "font-black");
+          if (mapStatus) {
+            mapStatus.textContent = "👆 點擊上方地圖中的任一園區，下方設施列表會自動幫你篩選出該園區項目！";
+          }
+          renderRides(filter);
+        });
+      });
+
+      // 點擊 SVG 地圖園區連動篩選下方設施，並將篩選器區塊捲動對齊至畫面上方
+      function handleMapZoneSelect(zone) {
+        const land = zone.getAttribute("data-land");
+        buttons.forEach(b => {
+          b.classList.remove("bg-coral", "font-black");
+          b.classList.add("bg-white", "font-bold");
+        });
+        if (land === "all") {
+          const allBtn = document.querySelector('.disney-filter-btn[data-filter="all"]');
+          if (allBtn) {
+            allBtn.classList.remove("bg-white", "font-bold");
+            allBtn.classList.add("bg-coral", "font-black");
+          }
+          if (mapStatus) mapStatus.textContent = "🏰 已選擇「奇妙夢想城堡（全園區總覽）」！";
+          renderRides("all");
+        } else {
+          if (mapStatus) mapStatus.textContent = `📍 目前顯示地圖選取園區：【${land}】的所有設施與注意事項`;
+          renderRides("all", land);
+        }
+        scrollToFilterSectionTop();
+      }
+
+      mapZones.forEach(zone => {
+        zone.addEventListener("click", () => handleMapZoneSelect(zone));
+        zone.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleMapZoneSelect(zone);
+          }
+        });
+      });
+
+      if (resetMapBtn) {
+        resetMapBtn.addEventListener("click", () => {
+          const mustBtn = document.querySelector('.disney-filter-btn[data-filter="must"]');
+          if (mustBtn) mustBtn.click();
+        });
+      }
+
+      renderRides("must");
+    }
+
+    // --- 5 大蛋塔巡禮互動評比 ＆ 餐廳地圖渲染 ---
+    function initEggTartsAndRestaurants() {
+      const tartGrid = document.getElementById("eggTartGrid");
+      const summaryBadge = document.getElementById("tartSummaryBadge");
+      const savedTarts = JSON.parse(localStorage.getItem("hk2026_tarts_state") || "{}");
+
+      function renderTarts() {
+        let tastedCount = 0;
+        tartGrid.innerHTML = eggTartsData.map(t => {
+          const state = savedTarts[t.id] || { tasted: false, souvenir: false };
+          if (state.tasted) tastedCount++;
+
+          return `
+            <div class="ehon-box-sm ${state.souvenir ? 'bg-yamabuki' : 'bg-white'} p-4 flex flex-col justify-between gap-3">
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="text-xs font-black px-2 py-0.5 rounded bg-washi border-2 border-ink">${t.order}</span>
+                  ${state.souvenir ? `<span class="ehon-badge bg-coral px-2 py-0.5 text-xs">🎁 伴手禮首選</span>` : ""}
+                </div>
+                <h4 class="font-black text-lg">${t.name}</h4>
+                <p class="text-xs font-black text-ink/80 mt-0.5">${t.style}</p>
+                <p class="text-xs font-bold mt-2 bg-washi p-2 rounded-lg border-2 border-ink">${t.note}</p>
+              </div>
+
+              <div class="space-y-1.5 pt-1">
+                <button type="button" data-tart-id="${t.id}" data-action="tasted"
+                  class="tart-action-btn w-full ehon-btn ${state.tasted ? 'bg-wakatake' : 'bg-washi'} py-1.5 px-2 text-xs font-black flex items-center justify-center gap-1">
+                  <span>${state.tasted ? '✅ 已試吃打卡！' : '⬜ 標記已試吃'}</span>
+                </button>
+                <button type="button" data-tart-id="${t.id}" data-action="souvenir"
+                  class="tart-action-btn w-full ehon-btn ${state.souvenir ? 'bg-coral' : 'bg-washi'} py-1.5 px-2 text-xs font-black flex items-center justify-center gap-1">
+                  <span>${state.souvenir ? '🏆 決定買這家回台灣' : '🎁 選為伴手禮'}</span>
+                </button>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        summaryBadge.textContent = `已試吃 ${tastedCount} / ${eggTartsData.length} 間`;
+
+        document.querySelectorAll(".tart-action-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-tart-id");
+            const action = btn.getAttribute("data-action");
+            if (!savedTarts[id]) savedTarts[id] = { tasted: false, souvenir: false };
+            savedTarts[id][action] = !savedTarts[id][action];
+            localStorage.setItem("hk2026_tarts_state", JSON.stringify(savedTarts));
+            renderTarts();
+          });
+        });
+      }
+
+      renderTarts();
+
+      // 渲染餐廳 Google Maps 卡片
+      const restGrid = document.getElementById("restaurantGrid");
+      restGrid.innerHTML = restaurantsData.map(r => `
+        <div class="ehon-card ehon-card-hover bg-white p-5 flex flex-col justify-between gap-4">
+          <div>
+            <span class="ehon-badge ${r.color} px-3 py-0.5 text-xs mb-2">${r.tag}</span>
+            <h4 class="text-lg font-black mb-1.5">${r.name}</h4>
+            <p class="text-xs sm:text-sm font-bold opacity-90 leading-relaxed">${r.desc}</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <a href="${r.mapUrl}" target="_blank" rel="noopener noreferrer"
+               class="ehon-btn bg-mizu px-3.5 py-2 text-xs sm:text-sm font-black inline-flex items-center gap-1.5">
+              <span>📍 開啟 Google Maps</span>
+              <span>↗</span>
+            </a>
+            ${r.secondMapUrl ? `
+              <a href="${r.secondMapUrl}" target="_blank" rel="noopener noreferrer"
+                 class="ehon-btn bg-yamabuki px-3.5 py-2 text-xs sm:text-sm font-black inline-flex items-center gap-1.5">
+                <span>📍 龍點心 Maps</span>
+                <span>↗</span>
+              </a>
+            ` : ""}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // --- 行前待辦清單 (Checklist + LocalStorage) ---
+    function initChecklist() {
+      const container = document.getElementById("checklistContainer");
+      const progressText = document.getElementById("checklistProgressText");
+      const progressBar = document.getElementById("checklistProgressBar");
+      const addForm = document.getElementById("addTodoForm");
+      const input = document.getElementById("newTodoInput");
+      const resetBtn = document.getElementById("resetChecklistBtn");
+
+      let todos = JSON.parse(localStorage.getItem("hk2026_checklist_v2") || "null");
+      if (!todos || !Array.isArray(todos)) {
+        todos = JSON.parse(JSON.stringify(defaultChecklist));
+      }
+
+      function saveAndRender() {
+        localStorage.setItem("hk2026_checklist_v2", JSON.stringify(todos));
+        const doneCount = todos.filter(t => t.done).length;
+        const total = todos.length;
+        const percent = total > 0 ? Math.round((doneCount / total) * 100) : 0;
+
+        progressText.textContent = `${doneCount} / ${total} 完成 (${percent}%)`;
+        progressBar.style.width = `${percent}%`;
+
+        container.innerHTML = todos.map((todo, idx) => `
+          <label class="ehon-box-sm ${todo.done ? 'bg-wakatake' : 'bg-washi'} p-3.5 flex items-start gap-3 cursor-pointer select-none transition">
+            <input type="checkbox" data-idx="${idx}" ${todo.done ? "checked" : ""}
+              class="todo-checkbox mt-1 w-5 h-5 accent-[#3E3A39] rounded border-2 border-ink cursor-pointer flex-shrink-0">
+            <span class="flex-1 text-sm sm:text-base font-bold ${todo.done ? 'line-through opacity-75' : ''}">${todo.text}</span>
+          </label>
+        `).join("");
+
+        document.querySelectorAll(".todo-checkbox").forEach(cb => {
+          cb.addEventListener("change", (e) => {
+            const index = parseInt(e.target.getAttribute("data-idx"), 10);
+            todos[index].done = e.target.checked;
+            saveAndRender();
+          });
+        });
+      }
+
+      addForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const val = input.value.trim();
+        if (!val) return;
+        todos.push({ id: "custom-" + Date.now(), text: val, done: false });
+        input.value = "";
+        saveAndRender();
+      });
+
+      resetBtn.addEventListener("click", () => {
+        todos = JSON.parse(JSON.stringify(defaultChecklist));
+        saveAndRender();
+      });
+
+      saveAndRender();
+    }
+  </script>
+</body>
+</html>
